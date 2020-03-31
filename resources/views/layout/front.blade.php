@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="{{$Pagename}}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Final - @yield('titulo')</title>
+    <link rel="stylesheet" href="{{ asset("css/style.min.css") }}">
 </head>
 
 <body>

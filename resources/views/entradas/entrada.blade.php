@@ -6,3 +6,5 @@
 @section('footer')
 <h2>hola</h2>
 @stop
+
+
