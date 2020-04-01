@@ -27,6 +27,18 @@ body {
     
 }
 
+.alert-warning {
+    color:red;
+    font-weight:600;
+    padding-top:10px;
+}
+
+.alert-success {
+    color: $green;
+    font-weight:600;
+    padding-top:10px;
+}
+
 input[type=text], input[type=password], input[type=email] {
     padding:10px;
     width:100%;

@@ -14,18 +14,6 @@
   padding: 10px;
 }
 
-.page-user .alert-warning {
-  color: red;
-  font-weight: 600;
-  padding-top: 10px;
-}
-
-.page-user .alert-success {
-  color: #58c93a;
-  font-weight: 600;
-  padding-top: 10px;
-}
-
 .page-user label {
   font-weight: 600;
 }

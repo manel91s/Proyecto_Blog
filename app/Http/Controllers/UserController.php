@@ -44,7 +44,29 @@ class UserController extends Controller
     
     }
 
-    public function login() {
-      
+    public function login(Request $request) {
+
+      $validate = $this->validate($request, [
+        'email' => 'required|string|max:255',
+        'password' => 'required|string|max:255',
+      ]);
+
+      $user = DB::table('user')
+         ->where('email',$request->input('email'))
+         ->first();
+
+         
+         $passwordCheck = Hash::make($request->input('password'));
+
+        
+         if(Hash::check($passwordCheck,$user->password)){
+
+          echo "Password correcta";
+         }else{
+           echo "Password incorrecta";
+         }
+
+         die();
+
     }
 }

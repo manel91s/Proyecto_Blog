@@ -21,7 +21,7 @@ class CreateUsuariosTable extends Migration
             $table->string('name',20);
             $table->string('surname',45);
             $table->string('email');
-            $table->string('password',255);
+            $table->char('password', 60);
             $table->string('avatar_url',255);
             $table->integer('id_role')->unsigned();
             $table->engine='InnoDB';
