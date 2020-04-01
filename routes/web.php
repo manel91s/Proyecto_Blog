@@ -14,8 +14,11 @@
 Route::get('/', 'PostController@index');
 
 //users
-
 Route::get('User', 'UserController@index');
 Route::post('create', 'UserController@create');
+Route::post('login', 'UserController@login');
+
+
+
 Route::get('Detalle', 'EntradaController@detalle');
 

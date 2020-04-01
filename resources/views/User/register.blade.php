@@ -42,7 +42,7 @@
     @endif
 
     <input type="submit" value="Enviar">
-
+    <p>hola</p>
 </form>
 
 @endsection
