@@ -1,0 +1,259 @@
+//Importar variables predeterminadas
+@import "../variables";
+@import "../fonts/fonts.scss";
+
+//CONTAINER , GENERAL
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+   
+}
+
+.container {
+    padding-top: 80px;
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+
+    font-family: "Calibrepro";
+    font-weight: 400;
+    font-size:16px;
+    line-height:16px;
+    
+}
+
+input[type=text], input[type=password], input[type=email] {
+    padding:10px;
+    width:100%;
+    border:1px solid #e1e0e0;
+}
+
+input[type=text]:focus,input[type=password]:focus, input[type=email]:focus{
+    outline:none;
+    margin-top:5px;
+    border: 1px solid $green;
+}
+
+input[type=submit] {
+    
+    padding:5px;
+}
+
+::placeholder {
+    color :#e1e0e0;
+}
+
+//END
+
+//SECTION
+
+section {
+    width: 48%;
+    border: 1px solid black;
+    
+}
+
+//END SECTION
+
+//ASIDE
+
+aside {
+    width: 20%;
+    margin-left: 50px;
+
+    div {
+        h2 {
+            text-transform: uppercase;
+            background: $graylight;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 25px;
+            border-left: 4px solid $green;
+            font-size: 18px;
+            font-weight: 600;
+            color: $graytext;
+            margin-bottom:16px;
+        }
+        a {
+
+            align-self:flex-end;
+        }
+
+        .content {
+            display:flex;
+            justify-content:space-between;
+            
+        }
+        
+
+    }
+}
+
+//END ASIDE
+
+//HEADER
+
+header {
+    background: $black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    span {
+        color: $green;
+    }
+
+    h1 {
+        color: white;
+        display: block;
+        cursor: pointer;
+        transition: 300ms;
+    }
+
+    h1:after {
+        content: ".";
+        color: $green;
+        transition: 300ms;
+    }
+
+    h1:hover:after {
+        color: white;
+    }
+
+    h1:hover {
+        transform: scale(1.2, 1.2);
+        color: $green;
+    }
+
+    nav {
+        display: block;
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        a {
+            display: block;
+            height: 120px;
+            padding: 50px;
+            border-left: 1px solid #1d1d1d;
+            transition: 0.8s;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: $green;
+        }
+
+        a:last-child {
+            border-right: 1px solid #1d1d1d;
+        }
+
+        li {
+            display: inline-block;
+            position: relative;
+            color: white;
+            text-decoration: none;
+        }
+        li:after {
+            content: "";
+            display: block;
+            margin: auto;
+            height: 5px;
+            width: 0px;
+            transition: all 0.8s;
+        }
+        li:hover:after {
+            width: 100%;
+            background: $green;
+        }
+
+        li:hover {
+            color: $green;
+        }
+    }
+}
+
+//END HEADER
+
+//FOOTER
+
+footer {
+    background: $graylight;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    h2 {
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        padding-bottom: 40px;
+        color: #e2e2e2;
+    }
+
+    span {
+        color: #b5b5b5;
+        font-weight: 500;
+    }
+
+    .fa {
+        padding: 10px;
+        font-size: 20px;
+        margin-right: 10px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    /* Add a hover effect if you want */
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    /* Set a specific color for each brand */
+
+    /* Facebook */
+    .fa-facebook {
+        background: #3b5998;
+        color: white;
+    }
+
+    /* Twitter */
+    .fa-twitter {
+        background: #55acee;
+        color: white;
+    }
+
+    .fa-linkedin {
+        background: #007bb5;
+        color: white;
+    }
+
+    .fa-instagram {
+        background: #125688;
+        color: white;
+    }
+
+    div {
+        text-align: center;
+    }
+}
+
+//END FOOTER

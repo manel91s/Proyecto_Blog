@@ -1,0 +1,261 @@
+@font-face {
+  font-family: "Calibrepro";
+  font-weight: 400;
+  src: url(/fonts/CalibreRegular.otf?93957dd48040dc5deb1cd40b4385de45);
+}
+
+@font-face {
+  font-family: "Calibrepro";
+  font-weight: 500;
+  src: url(/fonts/CalibreSemibold.otf?85d899ede90fe5568dad1b0438022ab3);
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  padding-top: 80px;
+  border: 1px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  font-family: "Calibrepro";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #e1e0e0;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus {
+  outline: none;
+  margin-top: 5px;
+  border: 1px solid #58c93a;
+}
+
+input[type=submit] {
+  padding: 5px;
+}
+
+::-webkit-input-placeholder {
+  color: #e1e0e0;
+}
+
+::-moz-placeholder {
+  color: #e1e0e0;
+}
+
+:-ms-input-placeholder {
+  color: #e1e0e0;
+}
+
+::-ms-input-placeholder {
+  color: #e1e0e0;
+}
+
+::placeholder {
+  color: #e1e0e0;
+}
+
+section {
+  width: 48%;
+  border: 1px solid black;
+}
+
+aside {
+  width: 20%;
+  margin-left: 50px;
+}
+
+aside div h2 {
+  text-transform: uppercase;
+  background: #f8f8f8;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  border-left: 4px solid #58c93a;
+  font-size: 18px;
+  font-weight: 600;
+  color: #adacac;
+  margin-bottom: 16px;
+}
+
+aside div a {
+  align-self: flex-end;
+}
+
+aside div .content {
+  display: flex;
+  justify-content: space-between;
+}
+
+header {
+  background: #292929;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header span {
+  color: #58c93a;
+}
+
+header h1 {
+  color: white;
+  display: block;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+header h1:after {
+  content: ".";
+  color: #58c93a;
+  transition: 300ms;
+}
+
+header h1:hover:after {
+  color: white;
+}
+
+header h1:hover {
+  transform: scale(1.2, 1.2);
+  color: #58c93a;
+}
+
+header nav {
+  display: block;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+header nav li {
+  display: inline-block;
+}
+
+header nav a {
+  display: block;
+  height: 120px;
+  padding: 50px;
+  border-left: 1px solid #1d1d1d;
+  transition: 0.8s;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+}
+
+header nav a:hover {
+  color: #58c93a;
+}
+
+header nav a:last-child {
+  border-right: 1px solid #1d1d1d;
+}
+
+header nav li {
+  display: inline-block;
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+header nav li:after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 5px;
+  width: 0px;
+  transition: all 0.8s;
+}
+
+header nav li:hover:after {
+  width: 100%;
+  background: #58c93a;
+}
+
+header nav li:hover {
+  color: #58c93a;
+}
+
+footer {
+  background: #f8f8f8;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  /* Add a hover effect if you want */
+  /* Set a specific color for each brand */
+  /* Facebook */
+  /* Twitter */
+}
+
+footer h2 {
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+footer p {
+  text-align: center;
+  padding-bottom: 40px;
+  color: #e2e2e2;
+}
+
+footer span {
+  color: #b5b5b5;
+  font-weight: 500;
+}
+
+footer .fa {
+  padding: 10px;
+  font-size: 20px;
+  margin-right: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+footer .fa:hover {
+  opacity: 0.7;
+}
+
+footer .fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+footer .fa-twitter {
+  background: #55acee;
+  color: white;
+}
+
+footer .fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+footer .fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+footer div {
+  text-align: center;
+}
+

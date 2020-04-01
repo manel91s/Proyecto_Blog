@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', 'EntradaController@index');
+Route::get('/', 'PostController@index');
+
+//users
+
+Route::get('User', 'UserController@index');
+Route::post('create', 'UserController@create');
 Route::get('Detalle', 'EntradaController@detalle');
 
