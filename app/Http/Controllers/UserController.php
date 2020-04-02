@@ -6,6 +6,7 @@ use DB;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Custom\Utils;
 
 class UserController extends Controller
 {
@@ -55,9 +56,9 @@ class UserController extends Controller
          ->where('email',$request->input('email'))
          ->first();
         
+         $pass = $user->password;
 
-         if(Hash::check($request->input('password'), $user->password)){
-
+         if(Utils::password_verify($request->input('password'), $pass)){
           echo "Password correcta";
          }else{
            echo "Password incorrecta";
