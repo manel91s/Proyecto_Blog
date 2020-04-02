@@ -54,11 +54,9 @@ class UserController extends Controller
       $user = DB::table('user')
          ->where('email',$request->input('email'))
          ->first();
-
         
 
-        
-         if(Hash::check($request->input('password'),$user->password)){
+         if(Hash::check($request->input('password'), $user->password)){
 
           echo "Password correcta";
          }else{
