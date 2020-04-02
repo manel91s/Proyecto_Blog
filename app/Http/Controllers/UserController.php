@@ -55,11 +55,10 @@ class UserController extends Controller
          ->where('email',$request->input('email'))
          ->first();
 
-         
-         $passwordCheck = Hash::make($request->input('password'));
+        
 
         
-         if(Hash::check($passwordCheck,$user->password)){
+         if(Hash::check($request->input('password'),$user->password)){
 
           echo "Password correcta";
          }else{
