@@ -44,7 +44,7 @@
 
 
 
-        <?php $user = session('login')?>
+        @php $user = session('login') @endphp
         @if(session()->has('admin') && session()->has('login'))
 
 
@@ -77,13 +77,13 @@
         <div>
 
             <h2>Categorias.</h2>
-            <?php $categorys = Utils::showCategorias()?>
+            @php $categorys = Utils::showCategorias() @endphp
             <ul>
                 @foreach ($categorys as $category)
                 <li>
                     {{$category->name}}
                 </li>
-                @endforeach
+            @endforeach
             </ul>
 
         </div>
