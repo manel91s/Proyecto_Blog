@@ -2,6 +2,22 @@
 
 class Utils {
 
+    //Delete Session
+
+    public function deleteSesion($login, $admin) {
+
+        if(session()->has($name)) {
+            session()->forget($name);
+        }
+
+        if(session()->has($admin)) {
+            session()->forget($admin);
+        }
+
+    }
+
+
+    //Password hass verify
     public static function password_verify($password, $hash) {
           if (!function_exists('crypt')) {
               trigger_error("Crypt must be loaded for password_verify to function", E_USER_WARNING);

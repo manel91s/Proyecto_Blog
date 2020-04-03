@@ -101,6 +101,24 @@ aside .fa {
   font-size: 25px;
 }
 
+aside a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px;
+  color: #58c93a;
+  background: #292929;
+}
+
+aside ul {
+  margin: 0px;
+}
+
+aside li {
+  list-style: none;
+  padding: 5px;
+  display: inline-block;
+}
+
 aside div h2 {
   text-transform: uppercase;
   background: #f8f8f8;

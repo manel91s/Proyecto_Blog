@@ -2,24 +2,13 @@
 
 <aside>
 
+<div>
 
-
-    <?php $user = session('login')?>
-    @if(session()->has('login'))
-        
-    <div>
-        <h2>Panel de Usuario.</h2>
-
-        
-        
-        <i class="fa fa-user" aria-hidden="true"></i><span>Hola <?=$user->name ." ". $user->surname?></span>
-        <a href="{{ action('UserController@logout') }}">Cerrar Session</a>
-
-        
-    
-    </div>
-    @else
-    <div>
+    <div class="padding-80px-bottom">
+            <h2>Search.</h2>
+        </div>
+    <div class="padding-40px-bottom">
+        @if(!session()->has('login'))
         <h2>Login.</h2>
         <form action="{{ action('UserController@login') }}" method="post">
             {{ csrf_field() }}
@@ -50,10 +39,45 @@
         </form>
     </div>
 
+   
+   @endif
+
+ 
+
+    
+
+    <?php $user = session('login')?>
+    @if(session()->has('admin') && session()->has('login'))
+  
+    
+    <div class="padding-40px-bottom">
+        <h2>Panel de Usuario.</h2>
+        <ul>
+        <li><i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span>Hola <?=$user->name ." ". $user->surname?></span></li>
+        <li><a class="logout" href="{{ action('UserController@logout') }}">Cerrar Session</a></li>
+        <li><a class="logout" href="{{ action('CategoryController@index') }}">Crear categorias</a></li>
+        </ul>
+    </div>
+
+    @elseif(session()->has('login'))
+
+    
+    
+    <div >
+        <h2>Panel de Usuario.</h2>
+        <ul>
+        <li><i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span>Hola <?=$user->name ." ". $user->surname?></span></li>
+        <li><a class="logout" href="{{ action('UserController@logout') }}">Cerrar Session</a></li>
+        
+        </ul>
+    </div>
+
     @endif
 
-
-    <div class="padding-80px-top">
-        <h2>Search.</h2>
+    <div>
+        <h2>Categorias.</h2>
     </div>
+
+
+ 
 </aside>

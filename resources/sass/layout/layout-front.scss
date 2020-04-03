@@ -39,6 +39,9 @@ body {
     padding-top:10px;
 }
 
+
+
+
 input[type=text], input[type=password], input[type=email] {
     padding:10px;
     width:100%;
@@ -84,6 +87,25 @@ aside {
 
     .fa {
         font-size:25px;
+    }
+
+    a {
+        text-decoration:none;
+        font-weight: 600;
+        padding:5px;
+        color:$green;
+        background: $black;
+        
+    }
+
+    ul {
+       margin:0px;
+    }
+    
+    li {
+        list-style: none;
+        padding:5px;
+        display:inline-block;
     }
 
     div {

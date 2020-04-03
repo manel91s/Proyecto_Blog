@@ -57,12 +57,19 @@ class UserController extends Controller
          ->first();
         
          if($user!=null) {
-           
             $pass = $user->password;
             if($pass && Utils::password_verify($request->input('password'), $pass)){
-          
+
               $Objuser = $user;
-              session(['login' => $Objuser]);
+              $isAdmin = $Objuser->id_role==1;
+
+              if($isAdmin){
+                session(['admin' => true]);
+                session(['login' => $Objuser]);
+              }else{
+                session(['login' => $Objuser]);
+              }
+
 
            }else{
               Session::flash('login_failed', 'Datos del usuario incorrecto');
@@ -85,6 +92,12 @@ class UserController extends Controller
             session()->forget('login');
         }
 
+        if(session()->has('admin')) {
+          session()->forget('admin');
+        }
+
         return back();
+
+        
     }
 }

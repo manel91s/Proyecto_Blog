@@ -2,11 +2,19 @@
   padding-top: 80px;
 }
 
+.padding-40px-bottom {
+  padding-bottom: 40px;
+}
+
 .margin-5px-top {
   margin-top: 5px;
 }
 
 .margin-10px-top {
   margin-top: 10px;
+}
+
+.padding-20px-bottom {
+  padding-bottom: 20px;
 }
 
