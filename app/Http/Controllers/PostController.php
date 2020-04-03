@@ -10,4 +10,9 @@ class PostController extends Controller
 
         return view('posts.posts', ['pageName' => 'page-post']);
     }
+
+    public function create() {
+        
+        return view('posts.create', ['pageName' => 'page-post']);
+    }
 }

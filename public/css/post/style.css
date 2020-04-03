@@ -1,0 +1,12 @@
+.page-post section {
+  padding: 20px;
+}
+
+.page-post section p {
+  margin-top: 10px;
+}
+
+.page-post section textarea {
+  width: 100%;
+}
+

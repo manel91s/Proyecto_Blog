@@ -19,7 +19,6 @@ class UserController extends Controller
 
     public function create(Request $request) {
 
-       
         $validate = $this->validate($request, [
           'name' => 'required|string|max:255',
           'surname' => 'required|string|max:255',
@@ -65,11 +64,11 @@ class UserController extends Controller
 
               if($isAdmin){
                 session(['admin' => true]);
-                session(['login' => $Objuser]);
-              }else{
-                session(['login' => $Objuser]);
+               
               }
 
+                session(['login' => $Objuser]);
+              
 
            }else{
               Session::flash('login_failed', 'Datos del usuario incorrecto');
@@ -80,8 +79,6 @@ class UserController extends Controller
           Session::flash('login_failed', 'Datos del usuario incorrecto');
          }
          
-        
-
          return back();
 
     }

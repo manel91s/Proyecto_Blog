@@ -104,6 +104,9 @@ aside .fa {
 aside a {
   text-decoration: none;
   font-weight: 600;
+}
+
+aside .logout {
   padding: 5px;
   color: #58c93a;
   background: #292929;
@@ -116,6 +119,7 @@ aside ul {
 aside li {
   list-style: none;
   padding: 5px;
+  margin-bottom: 10px;
   display: inline-block;
 }
 

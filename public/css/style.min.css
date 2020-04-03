@@ -104,6 +104,9 @@ aside .fa {
 aside a {
   text-decoration: none;
   font-weight: 600;
+}
+
+aside .logout {
   padding: 5px;
   color: #58c93a;
   background: #292929;
@@ -116,6 +119,7 @@ aside ul {
 aside li {
   list-style: none;
   padding: 5px;
+  margin-bottom: 10px;
   display: inline-block;
 }
 
@@ -306,6 +310,10 @@ footer div {
   padding-bottom: 40px;
 }
 
+.margin-10px-right {
+  margin-right: 10px;
+}
+
 .margin-5px-top {
   margin-top: 5px;
 }
@@ -341,5 +349,23 @@ footer div {
 
 .page-user input {
   margin-top: 10px;
+}
+
+
+.page-category section {
+  padding: 20px;
+}
+
+
+.page-post section {
+  padding: 20px;
+}
+
+.page-post section p {
+  margin-top: 10px;
+}
+
+.page-post section textarea {
+  width: 100%;
 }
 

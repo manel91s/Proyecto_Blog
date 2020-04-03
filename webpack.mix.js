@@ -18,5 +18,7 @@ const mix = require('laravel-mix');
 mix.sass('resources/sass/layout/layout-front.scss', 'public/css/layouts/layout-front/layout-front.css');
 mix.sass('resources/sass/layout/custom.scss', 'public/css/layouts/layout-front/custom.css');
 mix.sass('resources/sass/user/register.scss', 'public/css/user/register.css');
-mix.styles(['public/css/layouts/layout-front/layout-front.css','public/css/layouts/layout-front/custom.css','public/css/user/register.css'], 'public/css/style.min.css');
+mix.sass('resources/sass/category/style.scss', 'public/css/category/style.css');
+mix.sass('resources/sass/post/style.scss', 'public/css/post/style.css');
+mix.styles(['public/css/layouts/layout-front/layout-front.css','public/css/layouts/layout-front/custom.css','public/css/user/register.css', 'public/css/category/style.css','public/css/post/style.css'], 'public/css/style.min.css');
 

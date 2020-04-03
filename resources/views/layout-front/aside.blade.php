@@ -1,10 +1,12 @@
-<?php use App\Custom\Utils;?>
+@php use App\Custom\Utils @endphp
 <aside>
     <div>
 
         <div class="padding-80px-bottom">
             <h2>Search.</h2>
         </div>
+
+
         <div class="padding-40px-bottom">
             @if(!session()->has('login'))
             <h2>Login.</h2>
@@ -50,11 +52,12 @@
 
         <div class="padding-40px-bottom">
             <h2>Panel de Usuario.</h2>
+            <i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span>Hola
+                        <?=$user->name ." ". $user->surname?></span>
             <ul>
-                <li><i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span>Hola
-                        <?=$user->name ." ". $user->surname?></span></li>
-                <li><a class="logout" href="{{ action('UserController@logout') }}">Cerrar Session</a></li>
                 <li><a class="logout" href="{{ action('CategoryController@index') }}">Crear categorias</a></li>
+                <li><a class="logout" href="{{ action('PostController@create') }}">Crear entradas</a></li>
+                <li><a class="logout" href="{{ action('UserController@logout') }}">Cerrar Session</a></li>
             </ul>
         </div>
 
@@ -81,7 +84,7 @@
             <ul>
                 @foreach ($categorys as $category)
                 <li>
-                    {{$category->name}}
+                    <a href="{{$category->id}}">{{$category->name}}</a>
                 </li>
             @endforeach
             </ul>
