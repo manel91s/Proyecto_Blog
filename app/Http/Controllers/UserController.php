@@ -56,19 +56,24 @@ class UserController extends Controller
          ->where('email',$request->input('email'))
          ->first();
         
-         $pass = $user->password;
-
+         if($user!=null) {
+           
+            $pass = $user->password;
+            if($pass && Utils::password_verify($request->input('password'), $pass)){
           
-         if($pass && Utils::password_verify($request->input('password'), $pass)){
-          
-            $Objuser = $user;
-            session(['login' => $Objuser]);
+              $Objuser = $user;
+              session(['login' => $Objuser]);
 
+           }else{
+              Session::flash('login_failed', 'Datos del usuario incorrecto');
+           }
+           
          }else{
-            Session::flash('login_failed', 'Datos del usuario incorrecto');
+           
+          Session::flash('login_failed', 'Datos del usuario incorrecto');
          }
-
-         $valor = session('login');
+         
+        
 
          return back();
 

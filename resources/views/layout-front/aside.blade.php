@@ -33,13 +33,16 @@
                 <p class="alert-warning">{{$errors->first('password')}}</p>
             </p>
            
+            @if(Session::has('login_failed'))
+                  <p class="alert-warning">{{Session::get('login_failed')}}</p>
+            @endif
 
             <div class="content">
                 <p class="margin-5px-top">
                     <input type="submit">
                 </p>
-                <p><?=$user?></p>
-                
+
+             
                 <a href="{{ action('UserController@index') }}">Registrate aqui</a>
             </div>
            
