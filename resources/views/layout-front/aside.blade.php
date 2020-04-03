@@ -4,19 +4,18 @@
 
 
 
-
+    <?php $user = session('login')?>
     @if(session()->has('login'))
         
     <div>
         <h2>Panel de Usuario.</h2>
 
-        <?php $user = session('login')?>
+        
         
         <i class="fa fa-user" aria-hidden="true"></i><span>Hola <?=$user->name ." ". $user->surname?></span>
-        
-        
-        
+        <a href="{{ action('UserController@logout') }}">Cerrar Session</a>
 
+        
     
     </div>
     @else
@@ -39,6 +38,8 @@
                 <p class="margin-5px-top">
                     <input type="submit">
                 </p>
+                <p><?=$user?></p>
+                
                 <a href="{{ action('UserController@index') }}">Registrate aqui</a>
             </div>
            

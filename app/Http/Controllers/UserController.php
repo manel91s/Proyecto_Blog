@@ -72,4 +72,13 @@ class UserController extends Controller
          return back();
 
     }
+
+    public function logout() {
+
+        if(session()->has('login')) {
+            session()->forget('login');
+        }
+
+        return back();
+    }
 }
