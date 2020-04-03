@@ -93,6 +93,14 @@ aside {
   margin-left: 50px;
 }
 
+aside span {
+  margin-left: 10px;
+}
+
+aside .fa {
+  font-size: 25px;
+}
+
 aside div h2 {
   text-transform: uppercase;
   background: #f8f8f8;
