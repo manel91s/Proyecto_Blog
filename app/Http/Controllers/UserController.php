@@ -57,14 +57,15 @@ class UserController extends Controller
          ->first();
         
          $pass = $user->password;
+
           
-         if(Utils::password_verify($request->input('password'), $pass)){
+         if($pass && Utils::password_verify($request->input('password'), $pass)){
           
             $Objuser = $user;
             session(['login' => $Objuser]);
 
          }else{
-            session(['login' => 'Contraseña incorrecta']);
+            Session::flash('login_failed', 'Datos del usuario incorrecto');
          }
 
          $valor = session('login');
