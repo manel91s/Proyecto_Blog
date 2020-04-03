@@ -1,21 +1,17 @@
 <?php namespace App\Custom;
+Use DB;
 
 class Utils {
 
-    //Delete Session
+    public static function showCategorias() {
+        
+        $allCategory = DB::table('category')->get();
 
-    public function deleteSesion($login, $admin) {
-
-        if(session()->has($name)) {
-            session()->forget($name);
-        }
-
-        if(session()->has($admin)) {
-            session()->forget($admin);
-        }
+        return $allCategory;
 
     }
-
+  
+    
 
     //Password hass verify
     public static function password_verify($password, $hash) {
