@@ -23,7 +23,7 @@ Route::get('logout', 'UserController@logout');
 
 //Category
 Route::get('managamentCategory','CategoryController@index');
-Route::get('createCategory','CategoryController@create');
+Route::post('createCategory','CategoryController@create');
 
 
 

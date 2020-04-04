@@ -1,3 +1,4 @@
+
 @extends('layout-front.layout_front')
 
 
@@ -11,9 +12,11 @@
         
         <div>
         <h1>{{$featuredPosts[$i]->title}}</h1>
+        <p>Genero : {{$featuredPosts[$i]->name_category}}</p>
+        <p>{{substr($featuredPosts[$i]->body,0,400)}}...</p>
 
-        <p>{{$featuredPosts[$i]->body}}</p>
-
+        <p>Posteado por: {{$featuredPosts[$i]->name_user}}</p>
+        
         <a class="btn-read" href="{{$featuredPosts[$i]->id}}">Continuar Leyendo</a>
         </div>
     </article>
