@@ -1,7 +1,9 @@
+
+@import "../variables";
 .page-post {
 
     section {
-        padding:20px;
+        
 
         p {
             margin-top:10px;
@@ -9,6 +11,51 @@
 
         textarea {
             width:100%;
+        }
+
+        article{
+
+            h1 {
+                font-size:28px;
+                line-height:30px;
+                padding-bottom:55px;
+                color:$titlebody;
+            }
+
+            div {
+                padding:15px;
+            }
+            img {
+                width:100%;
+                object-fit: cover;
+                height:306px;
+                padding-bottom:25px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 20px;
+                color: $graybody;
+                padding-bottom:15px;
+
+            }
+
+            a {
+                color:$graybody;
+                line-height:15px;
+            }
+
+            .btn-read {
+                padding:5px 15px 5px 15px;
+                border-radius:25px;
+                border: 1px solid $graybody;
+                color: $graybtn;
+            }
+
+            .pagination {
+                border-top: 1px solid $borderPag;
+                width:100%;
+            }
         }
     }
 

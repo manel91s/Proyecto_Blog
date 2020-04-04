@@ -5,8 +5,6 @@
         <div class="padding-80px-bottom">
             <h2>Search.</h2>
         </div>
-
-
         <div class="padding-40px-bottom">
             @if(!session()->has('login'))
             <h2>Login.</h2>
@@ -34,17 +32,11 @@
 
                     <a href="{{ action('UserController@index') }}">Registrate aqui</a>
                 </div>
-
-
             </form>
         </div>
 
 
         @endif
-
-
-
-
 
         @php $user = session('login') @endphp
         @if(session()->has('admin') && session()->has('login'))

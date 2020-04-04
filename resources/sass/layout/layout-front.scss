@@ -12,7 +12,6 @@
 
 .container {
     padding-top: 80px;
-    border: 1px solid black;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -63,13 +62,16 @@ input[type=submit] {
     color :#e1e0e0;
 }
 
+a{
+    text-decoration:none;
+}
+
 //END
 
 //SECTION
 
 section {
     width: 48%;
-    border: 1px solid black;
     
 }
 

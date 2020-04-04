@@ -18,7 +18,6 @@
 
 .container {
   padding-top: 80px;
-  border: 1px solid black;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -83,9 +82,12 @@ input[type=submit] {
   color: #e1e0e0;
 }
 
+a {
+  text-decoration: none;
+}
+
 section {
   width: 48%;
-  border: 1px solid black;
 }
 
 aside {
@@ -314,6 +316,10 @@ footer div {
   margin-right: 10px;
 }
 
+.padding-80px-bottom {
+  padding-bottom: 80px;
+}
+
 .margin-5px-top {
   margin-top: 5px;
 }
@@ -357,15 +363,54 @@ footer div {
 }
 
 
-.page-post section {
-  padding: 20px;
-}
-
 .page-post section p {
   margin-top: 10px;
 }
 
 .page-post section textarea {
+  width: 100%;
+}
+
+.page-post section article h1 {
+  font-size: 28px;
+  line-height: 30px;
+  padding-bottom: 55px;
+  color: #4f4e4e;
+}
+
+.page-post section article div {
+  padding: 15px;
+}
+
+.page-post section article img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 306px;
+  padding-bottom: 25px;
+}
+
+.page-post section article p {
+  font-size: 16px;
+  line-height: 20px;
+  color: #606060;
+  padding-bottom: 15px;
+}
+
+.page-post section article a {
+  color: #606060;
+  line-height: 15px;
+}
+
+.page-post section article .btn-read {
+  padding: 5px 15px 5px 15px;
+  border-radius: 25px;
+  border: 1px solid #606060;
+  color: #c6c5c5;
+}
+
+.page-post section article .pagination {
+  border-top: 1px solid #e1e0e0;
   width: 100%;
 }
 
