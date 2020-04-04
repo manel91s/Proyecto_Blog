@@ -6,7 +6,7 @@
 @section('section')
 
 <h1 class="padding-20px-bottom">Crear entradas de peliculas</h1>
-<form action="{{ action('UserController@create') }}" method="post">
+<form action="{{ action('PostController@save') }}" method="post" enctype="multipart/form-data">
 
     {{ csrf_field() }}
     @php $user = session('login') @endphp
@@ -22,14 +22,14 @@
         @php $categorys = Utils::showCategorias() @endphp
         <select name="category" id="">
             @foreach ($categorys as $category)
-            <option value="$category->id">{{$category->name}}</option>
+            <option value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
         </select>
     </p>
 
     <p class="margin-10px-top"> 
         <label for="imagen">Subir imagen de la categoria</label> <br/>
-        <input type="file">
+        <input type="file" name="image">
     </p>
   
 

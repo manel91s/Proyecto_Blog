@@ -13,6 +13,7 @@
 
 Route::get('/', 'PostController@index');
 Route::get('CreatePost', 'PostController@create');
+Route::post('savePost','PostController@save');
 
 //users
 Route::get('User', 'UserController@index');
@@ -22,7 +23,8 @@ Route::get('logout', 'UserController@logout');
 
 //Category
 Route::get('managamentCategory','CategoryController@index');
-Route::post('createCategory','CategoryController@create');
+Route::get('createCategory','CategoryController@create');
+
 
 
 
