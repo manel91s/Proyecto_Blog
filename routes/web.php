@@ -14,6 +14,7 @@
 Route::get('/', 'PostController@index');
 Route::get('CreatePost', 'PostController@create');
 Route::post('savePost','PostController@save');
+Route::get('detailPost/{id}', 'PostController@detail')->name('detail.post');
 
 //users
 Route::get('User', 'UserController@index');
@@ -23,7 +24,9 @@ Route::get('logout', 'UserController@logout');
 
 //Category
 Route::get('managamentCategory','CategoryController@index');
+
 Route::post('createCategory','CategoryController@create');
+
 
 
 

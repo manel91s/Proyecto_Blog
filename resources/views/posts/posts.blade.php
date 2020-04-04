@@ -8,7 +8,8 @@
 
 @for ($i=0; $i< sizeof($featuredPosts); $i++)
     <article class="padding-80px-bottom">
-        <img src="images/{{$featuredPosts[$i]->image}}" alt="">
+
+        <img src="{{asset('images/'.$featuredPosts[$i]->image)}}" alt="">
         
         <div>
         <h1>{{$featuredPosts[$i]->title}}</h1>
@@ -17,7 +18,7 @@
 
         <p>Posteado por: {{$featuredPosts[$i]->name_user}}</p>
         
-        <a class="btn-read" href="{{$featuredPosts[$i]->id}}">Continuar Leyendo</a>
+        <a class="btn-read" href="{{ route('detail.post',$featuredPosts[$i]->id)}}">Continuar Leyendo</a>
         </div>
     </article>
 @endfor
