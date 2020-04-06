@@ -25,7 +25,7 @@
         <div class="comments margin-50px-bottom">
         <img src="" alt="">
         <span>{{$commentUser[$i]->name}}</span>
-
+        <p>{{$commentUser[$i]->created_at}}</p>
         <p>{{$commentUser[$i]->description}}</p>
 
         </div>
