@@ -42,6 +42,10 @@ body {
   padding-top: 10px;
 }
 
+p {
+  margin: 0px;
+}
+
 input[type=text],
 input[type=password],
 input[type=email] {
@@ -52,7 +56,8 @@ input[type=email] {
 
 input[type=text]:focus,
 input[type=password]:focus,
-input[type=email]:focus {
+input[type=email]:focus,
+textarea {
   outline: none;
   margin-top: 5px;
   border: 1px solid #58c93a;

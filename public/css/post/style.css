@@ -6,6 +6,21 @@
   width: 100%;
 }
 
+.page-post section .comments {
+  border: 1px solid black;
+  width: 100%;
+  padding: 20px;
+}
+
+.page-post section .comments span {
+  color: #58c93a;
+}
+
+.page-post section .comments p {
+  padding-top: 15px;
+  margin: 0px 0px 10px 0px;
+}
+
 .page-post section article h1 {
   font-size: 28px;
   line-height: 30px;

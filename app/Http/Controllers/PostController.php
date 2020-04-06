@@ -39,6 +39,7 @@ class PostController extends Controller
         ->join('category', 'post.id_category', '=', 'category.id')
         ->select('user.name as name_user', 'post.*', 'category.name as name_category')
         ->where('post.id', '=', $id)->get();
+        
 
         return view('posts.detail', ['detailPost' => $detailPost] ,['pageName' => 'page-post']);
     }
