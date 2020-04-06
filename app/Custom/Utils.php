@@ -10,6 +10,18 @@ class Utils {
         return $allCategory;
 
     }
+
+    public static function showCommentsByPost($idPost) {
+
+        $comments = DB::table('comment')
+                        ->join('post','comment.id_post','=','post.id')
+                        ->join('user', 'comment.id_user', '=', 'user.id')
+                        ->select('comment.description','user.name','user.surname')
+                        ->where('comment.id_post', '=', $idPost)
+                        ->get();
+
+        return $comments;
+    }
   
     
 

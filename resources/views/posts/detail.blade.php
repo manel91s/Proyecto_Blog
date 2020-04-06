@@ -1,3 +1,5 @@
+
+@php use App\Custom\Utils; @endphp
 @extends('layout-front.layout_front')
 
 @section('section')
@@ -12,17 +14,23 @@
         <p>Genero : {{$detailPost[$i]->name_category}}</p>
         <p>{{$detailPost[$i]->body}}</p>
         <p>Posteado por: {{$detailPost[$i]->name_user}}</p>
+
         </div>
   </article>
   @endfor
 
+       
+        @php $commentUser = Utils::showCommentsByPost($detailPost[0]->id) @endphp
+        @for ($i=0; $i < sizeof($commentUser); $i++)
         <div class="comments margin-50px-bottom">
         <img src="" alt="">
-        <span>Nombre</span>
+        <span>{{$commentUser[$i]->name}}</span>
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis non optio sapiente ipsa! Eos eius ipsum in cum! Rem, quam provident veniam sit voluptatum ab dolorem officia. Deserunt aliquam qui natus ipsum voluptates in dolorem quibusdam minima quia aliquid? Animi minus quis nihil ipsum dolore voluptatem iure reiciendis nam explicabo?</p>
+        <p>{{$commentUser[$i]->description}}</p>
 
         </div>
+
+        @endfor
 
 
         @for ($i=0; $i< sizeof($detailPost); $i++)
