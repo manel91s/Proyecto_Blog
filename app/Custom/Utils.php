@@ -1,5 +1,6 @@
 <?php namespace App\Custom;
 Use DB;
+Use Illuminate\Pagination\LengthAwarePaginator;
 
 class Utils {
 
@@ -19,8 +20,7 @@ class Utils {
                         ->select('comment.description','comment.created_at','user.name','user.surname')
                         ->where('comment.id_post', '=', $idPost)
                         ->orderByDesc('comment.id')
-                        ->get();
-
+                        ->simplePaginate(5);
         return $comments;
     }
   

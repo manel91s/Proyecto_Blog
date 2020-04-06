@@ -1,5 +1,6 @@
 
 @php use App\Custom\Utils; @endphp
+@php use Illuminate\Pagination\Paginator @endphp;
 @extends('layout-front.layout_front')
 
 @section('section')
@@ -28,9 +29,14 @@
         <p>{{$commentUser[$i]->created_at}}</p>
         <p>{{$commentUser[$i]->description}}</p>
 
+
         </div>
 
         @endfor
+        
+      
+        {{$commentUser->links()}}
+        
 
 
         @for ($i=0; $i< sizeof($detailPost); $i++)

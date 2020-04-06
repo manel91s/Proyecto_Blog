@@ -38,6 +38,33 @@ body {
     padding-top:10px;
 }
 
+.pagination{
+    display:flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width:100%;
+    border-top:1px solid $borderPag;
+    padding-bottom:50px;
+
+    .disabled {
+        color: $colorChange;
+        text-transform:uppercase;
+        font-size:18px;
+    }
+
+    li {
+        padding-top:20px;
+
+
+        a{
+            font-size:18px;
+            text-transform:uppercase;
+            color: $colorPag;
+        }
+    }
+    
+}
+
 
 p {
     margin:0px;

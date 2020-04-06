@@ -42,6 +42,31 @@ body {
   padding-top: 10px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 100%;
+  border-top: 1px solid #e1e0e0;
+  padding-bottom: 50px;
+}
+
+.pagination .disabled {
+  color: #818181;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.pagination li {
+  padding-top: 20px;
+}
+
+.pagination li a {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #a8a8a8;
+}
+
 p {
   margin: 0px;
 }
