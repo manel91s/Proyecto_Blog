@@ -18,8 +18,18 @@ function route(page) {
 function search() {
     
     document.querySelector("#form-search").addEventListener('submit', function(e) {
-        
+            e.preventDefault();
         var search = document.querySelector("#search").value;
+
+        if(search.trim()=="") {
+            var element = document.createElement("span");
+            var content = document.createTextNode('El campo no puede estar vacio');
+            element.appendChild(content);
+            var div = document.querySelector("#div1");
+            div.appendChild(element);
+            return;
+        }
+
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         e.preventDefault();
         fetch("search", {
@@ -45,8 +55,13 @@ function search() {
             
             })
             .then(function(response) {
-                    if(response) {
+
+                    console.log(response.search);
+                    if(response.search.length!=0) {
+                        document.querySelector("#div1").innerHTML="";
                         showQuerySearch(response.search);
+                    }else{
+                        failedQuerySearch();
                     }
 
             })
@@ -59,6 +74,13 @@ function search() {
    
 }
 
+function failedQuerySearch() {
+
+    var section = document.querySelector("section");
+
+    section.innerHTML = `<p>No se ha encontrado la pelicula</p>`;
+}
+
 function showQuerySearch(searchPost) {
 
 
@@ -69,7 +91,7 @@ function showQuerySearch(searchPost) {
         section.removeChild(section.firstChild);
     }
 
-    var resultSearch;
+    var resultSearch = "";
 
     for(i=0; i<searchPost.length;i++) {
         resultSearch+=
@@ -78,11 +100,11 @@ function showQuerySearch(searchPost) {
         <div>
         <h1>${searchPost[i].title}</h1>
         <p>Genero : ${searchPost[i].name_category}</p>
-        <p>substr(${searchPost[i].body},0,400)...</p>
+        <p>${searchPost[i].body.substring(0,400)}...</p>
     
         <p>Posteado por: ${searchPost[i].name_user}</p>
         
-        <a class="btn-read" href="{{route('detail.post',${searchPost[i].id}}}">Continuar Leyendo</a>
+        <a class="btn-read" href="http://www.blog-final.com.devel/detailPost/${searchPost[i].id}">Continuar Leyendo</a>
         </div>
         </article>`
     }

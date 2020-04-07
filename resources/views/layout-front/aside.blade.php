@@ -7,6 +7,7 @@
             <form action="" method="GET" id="form-search">
             <input type="text" id="search" name="search" placeholder="Buscar pelicula"> 
             <input type="submit" value="Enviar">
+            <div id="div1"></div>
             </form>
         </div>
         <div class="padding-40px-bottom">

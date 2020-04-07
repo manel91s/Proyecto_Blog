@@ -32,7 +32,9 @@ class PostController extends Controller
             return redirect()->action('PostController@index');
            }
 
-        return view('posts.create', ['pageName' => 'page-post']);
+        return view('posts.create', ['pageName' => 'page-post',
+                                     'dataPage' => 'page-post'
+                                    ]);
     }
 
     public function detail($id) {
@@ -44,7 +46,8 @@ class PostController extends Controller
         ->where('post.id', '=', $id)->get();
         
 
-        return view('posts.detail', ['detailPost' => $detailPost] ,['pageName' => 'page-post']);
+        return view('posts.detail', ['detailPost' => $detailPost] ,['pageName' => 'page-post',
+                                                                    'dataPage' => 'page-detail']);
     }
 
     public function save(Request $request) {

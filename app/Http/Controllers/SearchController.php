@@ -12,14 +12,16 @@ class SearchController extends Controller
         if($request->ajax()){
             $dato = $request->input('name');
 
-               $featuredPost = DB::table('post')
+               $searchPost = DB::table('post')
                         ->join('user', 'post.id_user', '=', 'user.id')
                         ->join('category', 'post.id_category', '=', 'category.id')
                         ->where('post.title', 'LIKE', '%'.$dato.'%')
                         ->select('user.name as name_user', 'post.*', 'category.name as name_category')
                         ->orderByDesc('post.id')->get();
+               
+        
 
-            return response()->json(['search' => $featuredPost]);
+            return response()->json(['search' => $searchPost]);
         }
     }
 }
