@@ -1,4 +1,5 @@
 {
+    "/js/script.min.js": "/js/script.min.js",
     "/css/layouts/layout-front/layout-front.css": "/css/layouts/layout-front/layout-front.css",
     "/css/layouts/layout-front/custom.css": "/css/layouts/layout-front/custom.css",
     "/css/user/register.css": "/css/user/register.css",

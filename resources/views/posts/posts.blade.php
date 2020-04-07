@@ -22,10 +22,7 @@
 @endfor
 
 
-<div class="pagination">
-
-
-</div>
+{{$featuredPosts->links()}}
 
 @endsection
 

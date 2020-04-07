@@ -31,6 +31,9 @@ Route::post('createCategory','CategoryController@create');
 //comments
 Route::post('createComment', 'CommentController@create');
 
+//Search
+Route::post('search', 'SearchController@index');
+
 
 
 

@@ -15,12 +15,15 @@ class PostController extends Controller
                         ->join('user', 'post.id_user', '=', 'user.id')
                         ->join('category', 'post.id_category', '=', 'category.id')
                         ->select('user.name as name_user', 'post.*', 'category.name as name_category')
-                        ->orderByDesc('post.id')->get();
+                        ->orderByDesc('post.id')->simplePaginate(3);
+
+                        
 
 
     
         return view('posts.posts', ['pageName' => 'page-post',
-                                    'featuredPosts' => $featuredPost]);
+                                    'featuredPosts' => $featuredPost,
+                                    'dataPage' => 'page-post']);
     }
 
     public function create() {

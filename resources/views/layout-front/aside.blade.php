@@ -4,6 +4,10 @@
 
         <div class="padding-80px-bottom">
             <h2>Search.</h2>
+            <form action="" method="GET" id="form-search">
+            <input type="text" id="search" name="search" placeholder="Buscar pelicula"> 
+            <input type="submit" value="Enviar">
+            </form>
         </div>
         <div class="padding-40px-bottom">
             @if(!session()->has('login'))
