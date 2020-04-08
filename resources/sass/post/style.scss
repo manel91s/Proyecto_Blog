@@ -16,16 +16,40 @@
         }
 
         .comments {
-            border:1px solid black;
             width:100%;
             padding:20px;
+            display:flex;
+            justify-content: space-around;
 
             span {
                 color:$green;
             }
             p {
-                padding-top:15px;
                 margin:0px 0px 10px 0px;;
+            }
+
+            #container-photo {
+                width:20%;
+                text-align:center;
+
+                img {
+                    width:100%;
+                    border-radius:125px;
+                    border:5px solid $green;
+                    margin-bottom:15px;
+                }
+
+                .role-color {
+                    color:$graybody;
+
+                }
+            }
+
+            #container-comment{
+                width:70%;
+                padding-left:10px;
+                text-align:center;
+                background: $graylight;
             }
         }
 

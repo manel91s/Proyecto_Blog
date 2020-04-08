@@ -8,6 +8,7 @@
 
 @for ($i=0; $i< sizeof($featuredPosts); $i++)
     <article class="padding-80px-bottom">
+        
         <img src="{{asset('images/'.$featuredPosts[$i]->image)}}" alt="">
         <div>
         <h1>{{$featuredPosts[$i]->title}}</h1>

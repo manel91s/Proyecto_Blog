@@ -48,9 +48,13 @@
 
 
         <div class="padding-40px-bottom">
+           
             <h2>Panel de Usuario.</h2>
-            <i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span>Hola
+            <img class="avatar_image" src="{{asset('avatar_img/'.$user->avatar_url)}}" alt="">
+            <div class="info-user">
+            <i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span>
                         <?=$user->name ." ". $user->surname?></span>
+            </div>
             <ul>
                 <li><a class="logout" href="{{ action('CategoryController@index') }}">Crear categorias</a></li>
                 <li><a class="logout" href="{{ action('PostController@create') }}">Crear entradas</a></li>

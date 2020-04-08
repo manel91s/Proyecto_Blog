@@ -42,6 +42,21 @@ body {
   padding-top: 10px;
 }
 
+.avatar_image {
+  width: 105px;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.info-user {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
 .pagination {
   display: flex;
   justify-content: space-between;

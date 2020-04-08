@@ -42,6 +42,21 @@ body {
   padding-top: 10px;
 }
 
+.avatar_image {
+  width: 105px;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.info-user {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
 .pagination {
   display: flex;
   justify-content: space-between;
@@ -453,9 +468,10 @@ footer div {
 }
 
 .page-post section .comments {
-  border: 1px solid black;
   width: 100%;
   padding: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .page-post section .comments span {
@@ -463,8 +479,30 @@ footer div {
 }
 
 .page-post section .comments p {
-  padding-top: 15px;
   margin: 0px 0px 10px 0px;
+}
+
+.page-post section .comments #container-photo {
+  width: 20%;
+  text-align: center;
+}
+
+.page-post section .comments #container-photo img {
+  width: 100%;
+  border-radius: 125px;
+  border: 5px solid #58c93a;
+  margin-bottom: 15px;
+}
+
+.page-post section .comments #container-photo .role-color {
+  color: #606060;
+}
+
+.page-post section .comments #container-comment {
+  width: 70%;
+  padding-left: 10px;
+  text-align: center;
+  background: #f8f8f8;
 }
 
 .page-post section article h1 {

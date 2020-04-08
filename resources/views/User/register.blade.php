@@ -3,7 +3,7 @@
 
 
 @section('section')
-<form action="{{ action('UserController@create') }}" method="post">
+<form action="{{ action('UserController@create') }}" method="post" enctype="multipart/form-data">
 
         {{ csrf_field() }}
     <p>
@@ -32,9 +32,9 @@
     </p>
 
     <p class="margin-10px-top">
-        <label for="avatar_url">url</label>
-        <input type="text" name="avatar_url" placeholer="url">
-        <p class="alert-warning">{{$errors->first('avatar_url')}}</p>
+        <label for="image">Imagen</label><br/>
+        <input type="file" name="image" placeholer="url">
+        <p class="alert-warning">{{$errors->first('image')}}</p>
     </p>
 
     @if (Session::has('success_message'))

@@ -26,8 +26,19 @@ class UserController extends Controller
           'surname' => 'required|string|max:255',
           'email' => 'required|string|max:255',
           'password' => 'required|string|max:255',
-          'avatar_url' => 'required|string|',
+          'image' => 'required|max:2048|mimes:jpeg,jpg, png',
         ]);
+
+        if($request->hasFile('image')) {
+          $file = $request->file('image');
+          $name = time().$file->getClientOriginalName();
+          
+          //Comprobar el tipo de la imagen para guardar en el storage
+          if($file->getMimeType() == 'image/jpeg' || $file->getMimeType() == 'image/jpg' || $file->getMimeType() == 'image/png') 
+          {
+              $file->move(public_path().'/avatar_img/', $name);
+          }
+      }
 
         $currentTime =Carbon::now();
         $user = DB::table('user')->insert(array(
@@ -36,7 +47,7 @@ class UserController extends Controller
             'surname' => $request->input('surname'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
-            'avatar_url' => $request->input('avatar_url'),
+            'avatar_url' => $name,
             'id_role' => 1
         ));
 
@@ -52,6 +63,8 @@ class UserController extends Controller
         'email' => 'required|string|max:255',
         'password' => 'required|string|max:255',
       ]);
+
+      
 
       $user = DB::table('user')
          ->where('email',$request->input('email'))

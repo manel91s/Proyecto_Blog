@@ -24,10 +24,15 @@
         @php $commentUser = Utils::showCommentsByPost($detailPost[0]->id) @endphp
         @for ($i=0; $i < sizeof($commentUser); $i++)
         <div class="comments margin-50px-bottom">
-        <img src="" alt="">
-        <span>{{$commentUser[$i]->name}}</span>
+        <div id="container-photo">
+        <img src="{{asset('avatar_img/'.$commentUser[$i]->avatar_url)}}" alt="">
+        <p class="role-color text-bold">{{$commentUser[$i]->role_name}}</p>
+        <span class="text-bold">{{$commentUser[$i]->name}}</span>
+        </div>
+        <div id="container-comment">
         <p>{{$commentUser[$i]->created_at}}</p>
         <p>{{$commentUser[$i]->description}}</p>
+        </div>
 
 
         </div>

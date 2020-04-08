@@ -17,10 +17,13 @@ class Utils {
         $comments = DB::table('comment')
                         ->join('post','comment.id_post','=','post.id')
                         ->join('user', 'comment.id_user', '=', 'user.id')
-                        ->select('comment.description','comment.created_at','user.name','user.surname')
+                        ->join('role', 'user.id_role', '=', 'role.id')
+                        ->select('comment.description','comment.created_at','user.name','user.surname','user.avatar_url','role.name as role_name')
                         ->where('comment.id_post', '=', $idPost)
                         ->orderByDesc('comment.id')
                         ->simplePaginate(5);
+
+        
         return $comments;
     }
   
