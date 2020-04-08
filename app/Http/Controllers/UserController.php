@@ -13,7 +13,9 @@ class UserController extends Controller
 
     public function index() {
 
-      return view('User.register', [ 'pageName' => 'page-user']);
+      return view('User.register', [ 'pageName' => 'page-user',
+                                     'dataPage' => 'page-post',
+                                     'dataGeneral' => 'searching-pages']);
     }
 
 
@@ -35,7 +37,7 @@ class UserController extends Controller
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
             'avatar_url' => $request->input('avatar_url'),
-            'id_role' => 2
+            'id_role' => 1
         ));
 
         Session::flash('success_message', 'Usuario Registrado Correctamente');

@@ -15,7 +15,9 @@ class CategoryController extends Controller
          return redirect()->action('PostController@index');
         }
 
-        return view('category.index', ['pageName' => 'page-category']);
+        return view('category.index', ['pageName' => 'page-category',
+                                       'dataGeneral' => 'searching-pages',
+                                       'dataPage' => 'page-post']);
     }
 
     public function create(Request $request) {

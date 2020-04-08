@@ -1,6 +1,6 @@
 
 function initPage_onDomContentLoaded() {
-    var page = document.querySelector("[data-page]").getAttribute('data-page');
+    var page = document.querySelector("[data-general]").getAttribute('data-general');
     
     route(page)
 }
@@ -9,7 +9,7 @@ function route(page) {
 
     switch(page){
         
-        case 'page-post':
+        case 'searching-pages':
             search();
         break;
     }
@@ -39,7 +39,7 @@ function search() {
               "X-Requested-With": "XMLHttpRequest",
               "X-CSRF-TOKEN": token
              },
-            method: 'post',
+            method: 'POST',
             credentials: "same-origin",
             body: JSON.stringify({
               name: search

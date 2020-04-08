@@ -22,3 +22,46 @@
   margin-top: 10px;
 }
 
+.page-user article h1 {
+  font-size: 28px;
+  line-height: 30px;
+  padding-bottom: 55px;
+  color: #4f4e4e;
+}
+
+.page-user article div {
+  padding: 15px;
+}
+
+.page-user article img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 306px;
+  padding-bottom: 25px;
+}
+
+.page-user article p {
+  font-size: 16px;
+  line-height: 20px;
+  color: #606060;
+  padding-bottom: 15px;
+}
+
+.page-user article a {
+  color: #606060;
+  line-height: 15px;
+}
+
+.page-user article .btn-read {
+  padding: 5px 15px 5px 15px;
+  border-radius: 25px;
+  border: 1px solid #606060;
+  color: #c6c5c5;
+}
+
+.page-user article .pagination {
+  border-top: 1px solid #e1e0e0;
+  width: 100%;
+}
+

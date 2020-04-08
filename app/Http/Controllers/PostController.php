@@ -15,7 +15,7 @@ class PostController extends Controller
                         ->join('user', 'post.id_user', '=', 'user.id')
                         ->join('category', 'post.id_category', '=', 'category.id')
                         ->select('user.name as name_user', 'post.*', 'category.name as name_category')
-                        ->orderByDesc('post.id')->simplePaginate(3);
+                        ->orderByDesc('post.id')->simplePaginate(2);
 
                         
 
@@ -23,7 +23,8 @@ class PostController extends Controller
     
         return view('posts.posts', ['pageName' => 'page-post',
                                     'featuredPosts' => $featuredPost,
-                                    'dataPage' => 'page-post']);
+                                    'dataPage' => 'page-post',
+                                    'dataGeneral' => 'searching-pages']);
     }
 
     public function create() {
@@ -33,7 +34,8 @@ class PostController extends Controller
            }
 
         return view('posts.create', ['pageName' => 'page-post',
-                                     'dataPage' => 'page-post'
+                                     'dataPage' => 'page-post',
+                                     'dataGeneral' => 'searching-pages'
                                     ]);
     }
 
@@ -47,7 +49,8 @@ class PostController extends Controller
         
 
         return view('posts.detail', ['detailPost' => $detailPost] ,['pageName' => 'page-post',
-                                                                    'dataPage' => 'page-detail']);
+                                                                    'dataPage' => 'page-detail',
+                                                                    'dataGeneral' => 'searching-pages']);
     }
 
     public function save(Request $request) {
