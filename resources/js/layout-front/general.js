@@ -32,7 +32,7 @@ function search() {
 
         let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         e.preventDefault();
-        fetch("search", {
+        fetch("/search", {
             headers: {
               "Content-Type": "application/json",
               "Accept": "application/json, text-plain, */*",
@@ -96,7 +96,7 @@ function showQuerySearch(searchPost) {
     for(i=0; i<searchPost.length;i++) {
         resultSearch+=
         `<article class="padding-80px-bottom">
-        <img src="images/${searchPost[i].image}" alt="">
+        <img src="http://www.blog-final.com.devel/images/${searchPost[i].image}" alt="">
         <div>
         <h1>${searchPost[i].title}</h1>
         <p>Genero : <span class="text-bold">${searchPost[i].name_category}</span></p>
