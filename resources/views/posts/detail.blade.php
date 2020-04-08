@@ -12,9 +12,9 @@
         
         <div>
         <h1>{{$detailPost[$i]->title}}</h1>
-        <p>Genero : {{$detailPost[$i]->name_category}}</p>
+        <p>Genero : <span class="text-bold">{{$detailPost[$i]->name_category}}</span></p>
         <p>{{$detailPost[$i]->body}}</p>
-        <p>Posteado por: {{$detailPost[$i]->name_user}}</p>
+        <p>Posteado por: <span class="text-bold">{{$detailPost[$i]->name_user}}</span></p>
 
         </div>
   </article>
@@ -25,7 +25,21 @@
         @for ($i=0; $i < sizeof($commentUser); $i++)
         <div class="comments margin-50px-bottom">
         <div id="container-photo">
-        <img src="{{asset('avatar_img/'.$commentUser[$i]->avatar_url)}}" alt="">
+        
+       
+
+        @if(session()->has('admin'))
+            @php $roleClass = "photoAdmin"; @endphp
+        @else
+            @php $roleClass=""; @endphp
+        @endif
+
+        @if ($commentUser[$i]->avatar_url!=null) 
+        <img class="avatar_image {{$roleClass}}" src="{{asset('avatar_img/'.$commentUser[$i]->avatar_url)}}"  alt=""> 
+        @else
+        <img src="" alt="">
+        @endif
+
         <p class="role-color text-bold">{{$commentUser[$i]->role_name}}</p>
         <span class="text-bold">{{$commentUser[$i]->name}}</span>
         </div>
@@ -46,10 +60,10 @@
 
         @for ($i=0; $i< sizeof($detailPost); $i++)
         @if (session()->has('login'))
-        <form action="{{ action('CommentController@create') }}" method="POST">
+        <form action="{{ action('CommentController@create') }}" method="POST" class="form-comment">
         {{ csrf_field() }}
        
-        <h2>Comentarios</h2>
+        <h2>Pon tu comentario</h2>
        
         @php $user = session()->get('login')  @endphp
         <input type="hidden" name="id_user" value="{{$user->id}}">

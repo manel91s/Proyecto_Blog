@@ -15,6 +15,14 @@
             width:100%;
         }
 
+        .form-comment {
+
+            h2 {
+                padding-bottom:15px;
+                text-transform: uppercase;
+            }
+        }
+
         .comments {
             width:100%;
             padding:20px;
@@ -31,13 +39,20 @@
             #container-photo {
                 width:20%;
                 text-align:center;
+                align-self:center;
 
-                img {
-                    width:100%;
+
+                .photo {
+                    height:100px;
+                    width:100px;
+                    border-radius:50%;
                     border-radius:125px;
                     border:5px solid $green;
                     margin-bottom:15px;
+                    
                 }
+
+                
 
                 .role-color {
                     color:$graybody;
@@ -50,6 +65,7 @@
                 padding-left:10px;
                 text-align:center;
                 background: $graylight;
+                padding:20px 10px 20px 10px;
             }
         }
 

@@ -18,6 +18,7 @@
 
 .container {
   padding-top: 80px;
+  padding-bottom: 80px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -43,10 +44,17 @@ body {
 }
 
 .avatar_image {
-  width: 105px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
   display: block;
+  border: 5px solid #58c93a;
   margin: auto;
   margin-bottom: 10px;
+}
+
+.photoAdmin {
+  border: 5px solid #d6d60f !important;
 }
 
 .info-user {
@@ -467,6 +475,11 @@ footer div {
   width: 100%;
 }
 
+.page-post section .form-comment h2 {
+  padding-bottom: 15px;
+  text-transform: uppercase;
+}
+
 .page-post section .comments {
   width: 100%;
   padding: 20px;
@@ -485,10 +498,13 @@ footer div {
 .page-post section .comments #container-photo {
   width: 20%;
   text-align: center;
+  align-self: center;
 }
 
-.page-post section .comments #container-photo img {
-  width: 100%;
+.page-post section .comments #container-photo .photo {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
   border-radius: 125px;
   border: 5px solid #58c93a;
   margin-bottom: 15px;
@@ -503,6 +519,7 @@ footer div {
   padding-left: 10px;
   text-align: center;
   background: #f8f8f8;
+  padding: 20px 10px 20px 10px;
 }
 
 .page-post section article h1 {

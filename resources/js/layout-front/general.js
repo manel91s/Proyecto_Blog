@@ -55,10 +55,10 @@ function search() {
             
             })
             .then(function(response) {
-
+                    document.querySelector("#div1").innerHTML="";
                     console.log(response.search);
                     if(response.search.length!=0) {
-                        document.querySelector("#div1").innerHTML="";
+                      
                         showQuerySearch(response.search);
                     }else{
                         failedQuerySearch();
@@ -99,10 +99,10 @@ function showQuerySearch(searchPost) {
         <img src="images/${searchPost[i].image}" alt="">
         <div>
         <h1>${searchPost[i].title}</h1>
-        <p>Genero : ${searchPost[i].name_category}</p>
+        <p>Genero : <span class="text-bold">${searchPost[i].name_category}</span></p>
         <p>${searchPost[i].body.substring(0,400)}...</p>
     
-        <p>Posteado por: ${searchPost[i].name_user}</p>
+        <p>Posteado por: <span class="text-bold">${searchPost[i].name_user}</span></p>
         
         <a class="btn-read" href="http://www.blog-final.com.devel/detailPost/${searchPost[i].id}">Continuar Leyendo</a>
         </div>

@@ -50,7 +50,17 @@
         <div class="padding-40px-bottom">
            
             <h2>Panel de Usuario.</h2>
-            <img class="avatar_image" src="{{asset('avatar_img/'.$user->avatar_url)}}" alt="">
+            @if(session()->has('admin'))
+            @php $roleClass = "photoAdmin"; @endphp
+            @else
+            @php $roleClass=""; @endphp
+            @endif
+            @if($user->avatar_url!=null)
+            <img class="avatar_image {{$roleClass}}" src="{{asset('avatar_img/'.$user->avatar_url)}}" alt="">
+            @else
+            <img class="" src="" alt="">
+            @endif
+
             <div class="info-user">
             <i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span>
                         <?=$user->name ." ". $user->surname?></span>

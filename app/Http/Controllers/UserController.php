@@ -26,7 +26,7 @@ class UserController extends Controller
           'surname' => 'required|string|max:255',
           'email' => 'required|string|max:255',
           'password' => 'required|string|max:255',
-          'image' => 'required|max:2048|mimes:jpeg,jpg, png',
+          'image' => 'max:2048|mimes:jpeg,jpg, png',
         ]);
 
         if($request->hasFile('image')) {
@@ -38,6 +38,8 @@ class UserController extends Controller
           {
               $file->move(public_path().'/avatar_img/', $name);
           }
+      }else {
+        $name = null;
       }
 
         $currentTime =Carbon::now();

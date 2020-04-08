@@ -6,6 +6,11 @@
   width: 100%;
 }
 
+.page-post section .form-comment h2 {
+  padding-bottom: 15px;
+  text-transform: uppercase;
+}
+
 .page-post section .comments {
   width: 100%;
   padding: 20px;
@@ -24,10 +29,13 @@
 .page-post section .comments #container-photo {
   width: 20%;
   text-align: center;
+  align-self: center;
 }
 
-.page-post section .comments #container-photo img {
-  width: 100%;
+.page-post section .comments #container-photo .photo {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
   border-radius: 125px;
   border: 5px solid #58c93a;
   margin-bottom: 15px;
@@ -42,6 +50,7 @@
   padding-left: 10px;
   text-align: center;
   background: #f8f8f8;
+  padding: 20px 10px 20px 10px;
 }
 
 .page-post section article h1 {

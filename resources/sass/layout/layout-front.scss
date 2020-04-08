@@ -12,6 +12,7 @@
 
 .container {
     padding-top: 80px;
+    padding-bottom:80px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -39,10 +40,18 @@ body {
 }
 
 .avatar_image {
-    width:105px;
+    height:100px;
+    width:100px;
+    border-radius:50%;
     display:block;
+    border:5px solid $green;
     margin:auto;
     margin-bottom:10px;
+
+}
+
+.photoAdmin {
+    border:5px solid #d6d60f !important;
 }
 
 .info-user{
