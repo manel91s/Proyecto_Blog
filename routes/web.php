@@ -27,6 +27,7 @@ Route::get('logout', 'UserController@logout');
 //Category
 Route::get('managamentCategory','CategoryController@index');
 Route::post('createCategory','CategoryController@create');
+Route::get('detailCategory/{id}', 'CategoryController@detail')->name('detail.category');
 
 //comments
 Route::post('createComment', 'CommentController@create');

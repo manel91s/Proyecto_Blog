@@ -31,11 +31,14 @@
         <p class="alert-warning">{{$errors->first('password')}}</p>
     </p>
 
+    
+
     <p class="margin-10px-top">
         <label for="image">Imagen</label><br/>
         <input type="file" name="image" placeholer="url">
         <p class="alert-warning">{{$errors->first('image')}}</p>
     </p>
+    
 
     @if (Session::has('success_message'))
         <p class="alert-success">{{Session::get('success_message')}}</p>

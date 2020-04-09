@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Calibrepro";
+  font-family: 'Calibrepro';
   font-weight: 400;
   src: url(/fonts/CalibreRegular.otf?93957dd48040dc5deb1cd40b4385de45);
 }
 
 @font-face {
-  font-family: "Calibrepro";
+  font-family: 'Calibrepro';
   font-weight: 500;
   src: url(/fonts/CalibreSemibold.otf?85d899ede90fe5568dad1b0438022ab3);
 }
@@ -395,13 +395,13 @@ footer div {
 
 
 @font-face {
-  font-family: "Calibrepro";
+  font-family: 'Calibrepro';
   font-weight: 400;
   src: url(/fonts/CalibreRegular.otf?93957dd48040dc5deb1cd40b4385de45);
 }
 
 @font-face {
-  font-family: "Calibrepro";
+  font-family: 'Calibrepro';
   font-weight: 500;
   src: url(/fonts/CalibreSemibold.otf?85d899ede90fe5568dad1b0438022ab3);
 }
@@ -464,6 +464,31 @@ footer div {
 
 .page-category section {
   padding: 20px;
+}
+
+.page-category .container-movie {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.page-category .container-movie div {
+  width: 130px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.page-category .container-movie div p {
+  padding-top: 5px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.page-category .container-movie div img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 }
 
 

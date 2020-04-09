@@ -1,19 +1,31 @@
 
 function initPage_onDomContentLoaded() {
-    var page = document.querySelector("[data-general]").getAttribute('data-general');
+    var page = document.querySelector("[data-page]").getAttribute('data-page');
     
     route(page)
 }
+
+window.addEventListener('DOMContentLoaded', initPage_onDomContentLoaded);
 
 function route(page) {
 
     switch(page){
         
-        case 'searching-pages':
+
+        case 'page-user':
             search();
-        break;
+            break
+
+        case 'page-post':
+            search();
+             break;
+        
+        case 'page-category':
+            searchCategory();
+            break;
     }
 }
+
 
 function search() {
     
@@ -81,6 +93,37 @@ function failedQuerySearch() {
     section.innerHTML = `<p>No se ha encontrado la pelicula</p>`;
 }
 
+
+function showQueryCategorySearch(searchPost) {
+
+    var section = document.querySelector("section");
+
+      //Borrar todos los elementos hijos de la seccion articulos
+      while(section.firstChild) {
+        section.removeChild(section.firstChild);
+    }
+
+    var resultSearch = "";
+    for(i=0; i<searchPost.length; i++) {
+
+        resultSearch+= 
+                        `
+                        <div class="container-movie">
+                        <div>
+                        <a href="{{ route('detail.post',$detailCategory[$i]->id)}}"><img src="{{ asset('imagesCover/'.$detailCategory[$i]->cover)}}" alt=""></a>
+                        <p>${searchPost[i].title}</p>
+                        
+                        </div>
+                        <div>`
+
+    }
+    
+    section.innerHTML=resultSearch;
+
+  
+
+}
+
 function showQuerySearch(searchPost) {
 
 
@@ -120,4 +163,3 @@ function showQuerySearch(searchPost) {
 } 
 
 
-window.addEventListener('DOMContentLoaded', initPage_onDomContentLoaded);

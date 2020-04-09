@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Calibrepro";
+  font-family: 'Calibrepro';
   font-weight: 400;
   src: url(/fonts/CalibreRegular.otf?93957dd48040dc5deb1cd40b4385de45);
 }
 
 @font-face {
-  font-family: "Calibrepro";
+  font-family: 'Calibrepro';
   font-weight: 500;
   src: url(/fonts/CalibreSemibold.otf?85d899ede90fe5568dad1b0438022ab3);
 }

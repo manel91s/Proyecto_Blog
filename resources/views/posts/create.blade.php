@@ -35,9 +35,15 @@
     </p>
 
     <p class="margin-10px-top"> 
-        <label for="imagen">Subir imagen de la categoria</label> <br/>
+        <label for="imagen">Subir imagen de la entrada</label> <br/>
         <input type="file" name="image"> 
         <p class="alert-warning">{{$errors->first('image')}}</p>
+    </p>
+
+    <p class="margin-10px-top">
+        <label for="image">Subir imagen de la caratula</label><br/>
+        <input type="file" name="cover">
+        <p class="alert-warning">{{$errors->first('cover')}}</p>
     </p>
   
 

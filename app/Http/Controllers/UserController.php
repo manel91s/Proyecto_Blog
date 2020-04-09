@@ -14,8 +14,7 @@ class UserController extends Controller
     public function index() {
 
       return view('User.register', [ 'pageName' => 'page-user',
-                                     'dataPage' => 'page-post',
-                                     'dataGeneral' => 'searching-pages']);
+                                     'dataPage' => 'page-user']);
     }
 
 

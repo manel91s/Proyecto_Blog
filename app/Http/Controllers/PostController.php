@@ -23,8 +23,7 @@ class PostController extends Controller
     
         return view('posts.posts', ['pageName' => 'page-post',
                                     'featuredPosts' => $featuredPost,
-                                    'dataPage' => 'page-post',
-                                    'dataGeneral' => 'searching-pages']);
+                                    'dataPage' => 'page-post']);
     }
 
     public function create() {
@@ -34,8 +33,7 @@ class PostController extends Controller
            }
 
         return view('posts.create', ['pageName' => 'page-post',
-                                     'dataPage' => 'page-post',
-                                     'dataGeneral' => 'searching-pages'
+                                     'dataPage' => 'page-post'
                                     ]);
     }
 
@@ -49,8 +47,8 @@ class PostController extends Controller
         
 
         return view('posts.detail', ['detailPost' => $detailPost] ,['pageName' => 'page-post',
-                                                                    'dataPage' => 'page-detail',
-                                                                    'dataGeneral' => 'searching-pages']);
+                                                                    'dataPage' => 'page-post'
+                                                                    ]);
     }
 
     public function save(Request $request) {
@@ -59,6 +57,7 @@ class PostController extends Controller
             'id_user' => 'required|integer',
             'id_category' => 'required|integer',
             'image' => 'required|max:2048|mimes:jpeg,jpg, png',
+            'cover' => 'required|max:2048|mimes:jpeg,jpg, png',
             'title' => 'required|string|max:120',
             'featured' => 'required|integer',
             'body' => 'required|string|',
@@ -77,6 +76,17 @@ class PostController extends Controller
             }
         }
 
+        if($request->hasFile('cover')) {
+            $fileCover = $request->file('cover');
+            $nameCover = time().$fileCover->getClientOriginalName();
+            
+            //Comprobar el tipo de la imagen para guardar en el storage
+            if($fileCover->getMimeType() == 'image/jpeg' || $fileCover->getMimeType() == 'image/jpg' || $fileCover->getMimeType() == 'image/png') 
+            {
+                $fileCover->move(public_path().'/imagesCover/', $nameCover);
+            }
+        }
+
         
         
         $currentTime =Carbon::now();
@@ -87,6 +97,7 @@ class PostController extends Controller
             'id_user' => $request->input('id_user'),
             'id_category' => $request->input('id_category'),
             'image' => $name,
+            'cover' => $nameCover,
             'title' => $request->input('title'),
             'featured' => $request->input('featured'),
             'body' => $request->input('body'),

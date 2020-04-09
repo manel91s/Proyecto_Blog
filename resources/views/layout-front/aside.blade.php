@@ -95,7 +95,7 @@
             <ul>
                 @foreach ($categorys as $category)
                 <li>
-                    <a href="{{$category->id}}">{{$category->name}}</a>
+                    <a href="{{ route('detail.category',$category->id)}}">{{$category->name}}</a>
                 </li>
             @endforeach
             </ul>

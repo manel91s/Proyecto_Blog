@@ -16,8 +16,7 @@ class CategoryController extends Controller
         }
 
         return view('category.index', ['pageName' => 'page-category',
-                                       'dataGeneral' => 'searching-pages',
-                                       'dataPage' => 'page-post']);
+                                       'dataPage' => 'page-category']);
     }
 
     public function create(Request $request) {
@@ -36,6 +35,21 @@ class CategoryController extends Controller
         Session::flash('success_message', 'Categoria creada correctamente');
         
         return back();
+    }
+
+    public function detail($id) {
+
+        $detailCategory = DB::table('category')
+        ->join('post', 'category.id', '=', 'post.id_category')
+        ->where('category.id', '=', $id)->get();   
+        
+      
+        
+        
+        
+        return view('category.detail', ['detailCategory' => $detailCategory,    
+                                        'pageName' => 'page-category',
+                                        'dataPage' => 'page-category']);
     }
 
   

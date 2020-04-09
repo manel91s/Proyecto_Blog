@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 
+
 /*
  |--------------------------------------------------------------------------
  | Mix As
@@ -14,11 +15,8 @@ const mix = require('laravel-mix');
 
 /*mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');*/
-
-mix.js('resources/js/layout-front/general.js','public/js/script.min.js');
-
-
-
+mix.js('resources/js/category/page-category','public/js/script.min.js')
+   .js('resources/js/layout-front/general.js','public/js/script.min.js');
 
 mix.sass('resources/sass/layout/layout-front.scss', 'public/css/layouts/layout-front/layout-front.css');
 mix.sass('resources/sass/layout/custom.scss', 'public/css/layouts/layout-front/custom.css');

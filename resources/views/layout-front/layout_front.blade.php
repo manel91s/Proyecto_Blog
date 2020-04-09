@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" class={{$pageName}} data-page="{{$dataPage}}" data-general="{{$dataGeneral}}">
+
+<html lang="es" class={{$pageName}} data-page="{{$dataPage}}">
 
 <head>
     <meta charset="UTF-8">
