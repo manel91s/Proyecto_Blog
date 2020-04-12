@@ -26,13 +26,11 @@
         <div class="comments margin-50px-bottom">
         <div id="container-photo">
         
-       
-
-        @if(session()->has('admin'))
+        @if($commentUser[$i]->role_name=='Admin')
             @php $roleClass = "photoAdmin"; @endphp
-        @else
+            @else
             @php $roleClass=""; @endphp
-        @endif
+            @endif
 
         @if ($commentUser[$i]->avatar_url!=null) 
         <img class="avatar_image {{$roleClass}}" src="{{asset('avatar_img/'.$commentUser[$i]->avatar_url)}}"  alt=""> 

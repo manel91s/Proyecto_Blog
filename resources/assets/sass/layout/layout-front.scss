@@ -10,6 +10,7 @@
    
 }
 
+
 .container {
     padding-top: 80px;
     padding-bottom:80px;
@@ -88,6 +89,29 @@ body {
         }
     }
     
+}
+
+
+
+
+.info-user {
+    
+    li {
+        display:block;
+        padding:0px;
+    
+        
+        a {
+            display:block;
+            padding:10px;
+            background:$graylight;
+            color:$green;
+            
+        }
+
+
+        
+    }
 }
 
 

@@ -12,6 +12,14 @@ class Utils {
 
     }
 
+    public static function showImage($id) {
+
+        $user = DB::table('user')
+        ->where('id',$id)
+        ->first();
+        return $user;
+    }
+
     public static function showCommentsByPost($idPost) {
 
         $comments = DB::table('comment')

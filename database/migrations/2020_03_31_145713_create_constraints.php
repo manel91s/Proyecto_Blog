@@ -24,8 +24,8 @@ class CreateConstraints extends Migration
         });
 
         Schema::table('post', function (Blueprint $table) {
-            $table->foreign('id_user')->references('id')->on('user');
-            $table->foreign('id_category')->references('id')->on('category');
+            $table->foreign('id_user')->references('id')->on('user')->onDelete('cascade');
+            $table->foreign('id_category')->references('id')->on('category')->onDelete('cascade');
             
         });
 

@@ -19,6 +19,9 @@ function route(page) {
         case 'page-post':
             search();
              break;
+        case 'page-post-managament':
+            managamentPost();
+            break;
         
         case 'page-category':
             searchCategory();
@@ -94,35 +97,7 @@ function failedQuerySearch() {
 }
 
 
-function showQueryCategorySearch(searchPost) {
 
-    var section = document.querySelector("section");
-
-      //Borrar todos los elementos hijos de la seccion articulos
-      while(section.firstChild) {
-        section.removeChild(section.firstChild);
-    }
-
-    var resultSearch = "";
-    for(i=0; i<searchPost.length; i++) {
-
-        resultSearch+= 
-                        `
-                        <div class="container-movie">
-                        <div>
-                        <a href="{{ route('detail.post',$detailCategory[$i]->id)}}"><img src="{{ asset('imagesCover/'.$detailCategory[$i]->cover)}}" alt=""></a>
-                        <p>${searchPost[i].title}</p>
-                        
-                        </div>
-                        <div>`
-
-    }
-    
-    section.innerHTML=resultSearch;
-
-  
-
-}
 
 function showQuerySearch(searchPost) {
 

@@ -43,47 +43,75 @@
 
         @endif
 
+     
+
         @php $user = session('login') @endphp
+
+        @if($user && $user->id_role==1)
+            @php $roleClass = "photoAdmin"; @endphp
+            @else
+            @php $roleClass=""; @endphp
+            @endif
+
         @if(session()->has('admin') && session()->has('login'))
 
 
         <div class="padding-40px-bottom">
            
             <h2>Panel de Usuario.</h2>
-            @if(session()->has('admin'))
-            @php $roleClass = "photoAdmin"; @endphp
-            @else
-            @php $roleClass=""; @endphp
-            @endif
-            @if($user->avatar_url!=null)
+
+            @php $realImage = Utils::showImage($user->id) @endphp
+
+            @if($realImage && $user->avatar_url!=$realImage->avatar_url)
+            <img class="avatar_image {{$roleClass}}" src="{{asset('avatar_img/'.$realImage->avatar_url)}}" alt="">
+            @elseif($user->avatar_url!=null)
             <img class="avatar_image {{$roleClass}}" src="{{asset('avatar_img/'.$user->avatar_url)}}" alt="">
             @else
             <img class="" src="" alt="">
             @endif
 
             <div class="info-user">
-            <i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span>
+            <i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span class="text-bold">
                         <?=$user->name ." ". $user->surname?></span>
-            </div>
+
             <ul>
-                <li><a class="logout" href="{{ action('CategoryController@index') }}">Crear categorias</a></li>
-                <li><a class="logout" href="{{ action('PostController@create') }}">Crear entradas</a></li>
-                <li><a class="logout" href="{{ action('UserController@logout') }}">Cerrar Session</a></li>
+                <li><a href="{{ route('update.user',$user->id)}}">Gestionar Perfil</a></li>
+                <li><a class="" href="">Gestionar Usuarios</a></li>
+                <li><a class="" href="{{ action('CategoryController@index') }}">Crear categorias</a></li>
+                <li><a href="{{ action('PostController@managament') }}">Gestionar Entradas</a></li>
+                <li><a class="" href="{{ action('PostController@create') }}">Crear entradas</a></li>
+                <li><a class="" href="{{ action('UserController@logout') }}">Cerrar Session</a></li>
             </ul>
+            </div>
+         
         </div>
 
         @elseif(session()->has('login'))
 
-
+        @php $realImage = Utils::showImage($user->id) @endphp
 
         <div>
             <h2>Panel de Usuario.</h2>
-            <ul>
-                <li><i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span>Hola
-                        <?=$user->name ." ". $user->surname?></span></li>
-                <li><a class="logout" href="{{ action('UserController@logout') }}">Cerrar Session</a></li>
+            
+            @if($realImage && $user->avatar_url!=$realImage->avatar_url)
+            <img class="avatar_image {{$roleClass}}" src="{{asset('avatar_img/'.$realImage->avatar_url)}}" alt="">
+            @elseif($user->avatar_url!=null)
+            <img class="avatar_image {{$roleClass}}" src="{{asset('avatar_img/'.$user->avatar_url)}}" alt="">
+            @else
+            <img class="" src="" alt="">
+            @endif
 
-            </ul>
+            <div class="info-user"> 
+                <i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span class="text-bold">
+                        <?=$user->name ." ". $user->surname?></span>
+                <ul>
+                    
+                    <li><a href="{{ route('update.user',$user->id)}}">Gestionar Perfil</a></li>
+                    <li><a href="{{ action('UserController@logout') }}">Cerrar Sesion</a></li>
+
+                </ul>
+            </div>
+
         </div>
 
         @endif

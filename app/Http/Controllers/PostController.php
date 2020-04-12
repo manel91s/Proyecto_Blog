@@ -16,10 +16,7 @@ class PostController extends Controller
                         ->join('category', 'post.id_category', '=', 'category.id')
                         ->select('user.name as name_user', 'post.*', 'category.name as name_category')
                         ->orderByDesc('post.id')->simplePaginate(2);
-
                         
-
-
     
         return view('posts.posts', ['pageName' => 'page-post',
                                     'featuredPosts' => $featuredPost,
@@ -35,6 +32,21 @@ class PostController extends Controller
         return view('posts.create', ['pageName' => 'page-post',
                                      'dataPage' => 'page-post'
                                     ]);
+    }
+
+  
+    public function managament() {
+
+        if(!session()->has('admin')) {   
+            return redirect()->action('PostController@index');
+           }
+
+           
+
+       
+           
+           return view('posts.managament', ['pageName' => 'page-post',
+                                           'dataPage' => 'page-post-managament']);
     }
 
     public function detail($id) {
@@ -108,4 +120,44 @@ class PostController extends Controller
           return back()->with('success', 'Entrada publicada satisfactoriamente');
 
     }
+
+    public function queryPost() {
+
+        $allPosts = DB::table('post')
+        ->join('user', 'post.id_user', '=', 'user.id')
+        ->join('category', 'post.id_category', '=', 'category.id')
+        ->select('user.name as name_user', 'post.*', 'category.name as name_category')
+        ->orderByDesc('post.id')->simplePaginate(10);
+
+        
+        return response()->json(['allPosts' => $allPosts]);
+    }
+
+
+    public function deletePost(Request $request) {
+
+        
+        if($request->ajax()){
+            $postId = (int) $request->input('idPost');
+
+            
+            $deletePost = DB::table('post')->where('post.id', '=',$postId)->delete();
+
+            return response()->json(['success' => 'Registro borrado correctamente']);
+
+              
+        }
+
+     }
+
+     public function edit($id) {
+        
+        
+
+        return view('posts.edit',['pageName' => 'page-post',
+                                  'dataPage' => 'page-post']);
+                                                
+
+     }
+
 }

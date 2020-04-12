@@ -56,3 +56,33 @@ function searchCategory() {
 
 
 }
+
+function showQueryCategorySearch(searchPost) {
+
+    var section = document.querySelector("section");
+
+      //Borrar todos los elementos hijos de la seccion articulos
+      while(section.firstChild) {
+        section.removeChild(section.firstChild);
+    }
+
+    var resultSearch = "";
+    for(i=0; i<searchPost.length; i++) {
+
+        resultSearch+= 
+                        `
+                        <div class="container-movie">
+                        <div>
+                        <a href="http://www.blog-final.com.devel/detailPost/${searchPost[i].id}"><img src="http://www.blog-final.com.devel/imagesCover/${searchPost[i].image}" alt=""></a>
+                        <p>${searchPost[i].title}</p>
+                        
+                        </div>
+                        <div>`
+
+    }
+    
+    section.innerHTML=resultSearch;
+
+  
+
+}

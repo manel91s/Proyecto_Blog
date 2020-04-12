@@ -90,18 +90,6 @@ body {
   color: #a8a8a8;
 }
 
-.info-user li {
-  display: block;
-  padding: 0px;
-}
-
-.info-user li a {
-  display: block;
-  padding: 10px;
-  background: #f8f8f8;
-  color: #58c93a;
-}
-
 p {
   margin: 0px;
 }
@@ -453,34 +441,8 @@ footer div {
   width: 100%;
 }
 
-.page-post section table {
-  margin-top: 50px;
-  width: 100%;
-}
-
-.page-post section td {
-  text-align: center;
-  padding: 10px;
-}
-
-.page-post section td img {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-}
-
-.page-post section th {
-  border-right: 1px solid black;
-  padding: 10px;
-}
-
 .page-post section p {
   margin-top: 10px;
-}
-
-.page-post section h2 {
-  border-bottom: 1px solid black;
-  text-align: center;
 }
 
 .page-post section textarea {
@@ -618,4 +580,4 @@ footer div {
   src: url("../fonts/CalibreSemibold.otf");
 }
 
-/*# sourceMappingURL=style.min.css.map */
+/*# sourceMappingURL=style.mins.css.map */
