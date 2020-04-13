@@ -45,9 +45,7 @@ class CategoryController extends Controller
         ->join('post', 'category.id', '=', 'post.id_category')
         ->where('category.id', '=', $id)->get();   
         
-      
-        
-        
+    
         
         return view('category.detail', ['detailCategory' => $detailCategory,    
                                         'pageName' => 'page-category',

@@ -12,8 +12,7 @@
 
 
 .container {
-    padding-top: 80px;
-    padding-bottom:80px;
+    padding-top: 130px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -50,6 +49,9 @@ body {
     margin-bottom:10px;
 
 }
+.delete {
+    cursor:pointer;
+}
 
 .photoAdmin {
     border:5px solid #d6d60f !important;
@@ -63,6 +65,10 @@ body {
     font-weight:600;
 }
 
+.center-text {
+    text-align:center;
+    text-transform: uppercase;
+}
 
 .pagination{
     display:flex;
@@ -227,10 +233,10 @@ aside {
 header {
     background: $black;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+    height: 65px;
+    position:relative;
+    position:fixed;
+    
 
     span {
         color: $green;
@@ -241,6 +247,9 @@ header {
         display: block;
         cursor: pointer;
         transition: 300ms;
+        line-height:65px;
+        background:$black;
+        
     }
 
     h1:after {
@@ -253,68 +262,63 @@ header {
         color: white;
     }
 
-    h1:hover {
-        transform: scale(1.2, 1.2);
-        color: $green;
+
+    nav a:hover{
+        background:gray;
     }
 
     nav {
-        display: block;
+        display: flex;
+        justify-content: space-around;
+        transition:1s;
+        
 
         ul {
             list-style-type: none;
             padding: 0;
         }
 
-        li {
-            display: inline-block;
-        }
 
         a {
-            display: block;
-            height: 120px;
-            padding: 50px;
+            padding: 0 15px;
             border-left: 1px solid #1d1d1d;
             transition: 0.8s;
             cursor: pointer;
+            line-height:65px;
             font-size: 18px;
             font-weight: 500;
             text-decoration: none;
             color: white;
+            background:$black;
         }
 
         a:hover {
             color: $green;
         }
 
-        a:last-child {
+        a {
+            border-left: 1px solid #1d1d1d;
             border-right: 1px solid #1d1d1d;
         }
 
         li {
-            display: inline-block;
-            position: relative;
             color: white;
             text-decoration: none;
-        }
-        li:after {
-            content: "";
-            display: block;
-            margin: auto;
-            height: 5px;
-            width: 0px;
-            transition: all 0.8s;
-        }
-        li:hover:after {
-            width: 100%;
-            background: $green;
+            display:inline-block;
         }
 
-        li:hover {
-            color: $green;
-        }
     }
 }
+
+#hamburguesa {
+    position:absolute;
+    left:10px;
+    top:10px;
+    display:none;
+    
+}
+
+
 
 //END HEADER
 
@@ -383,3 +387,57 @@ footer {
 }
 
 //END FOOTER
+@media only screen and (max-width:800px) {
+
+   .container {
+       flex-direction: column;
+       padding-right:10px;
+       padding-left:10px;
+   }
+
+   section {
+       width:100%;
+       display:block;
+   }
+
+   aside {
+       width:100%;
+       flex-direction: column;
+       margin:0px;
+
+       div {
+           width:90%;
+           margin:auto;
+       }
+   }
+
+    #hamburguesa {
+      
+      display:block;
+      cursor:pointer;
+    }
+
+    h1 {
+        text-align:center;
+    }
+
+    nav a {
+        text-align:center;
+    }
+
+   
+
+    nav  {
+      position:absolute;
+      top: 65px;
+      flex-direction:column;
+      left: -130px;
+      
+    }
+
+    li {
+        display:block;
+    }
+
+  
+  }

@@ -76,10 +76,9 @@
 
             <ul>
                 <li><a href="{{ route('update.user',$user->id)}}">Gestionar Perfil</a></li>
-                <li><a class="" href="">Gestionar Usuarios</a></li>
                 <li><a class="" href="{{ action('CategoryController@index') }}">Crear categorias</a></li>
+                <li><a class="" href="{{ action('PostController@create') }}">Crear entrada</a></li>
                 <li><a href="{{ action('PostController@managament') }}">Gestionar Entradas</a></li>
-                <li><a class="" href="{{ action('PostController@create') }}">Crear entradas</a></li>
                 <li><a class="" href="{{ action('UserController@logout') }}">Cerrar Session</a></li>
             </ul>
             </div>

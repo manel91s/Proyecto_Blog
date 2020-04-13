@@ -1,9 +1,40 @@
 
 function initPage_onDomContentLoaded() {
     var page = document.querySelector("[data-page]").getAttribute('data-page');
-    
     route(page)
 }
+
+ window.onload=function() {
+
+    var menu = false; 
+
+    document.querySelector("#hamburguesa").addEventListener("click",menuBarra)    
+    //activar un listener para detectar el cambio de resolucion horizontal del objeto window
+    window.addEventListener("resize",ocultarMenu)
+
+    function ocultarMenu() {
+        //Solo se ocultara cuando el ancho de la ventana del navegador supere el limite de la mediaquery
+        if(window.innerWidth >=800) {
+          document.querySelector("nav").style.left="-130px"
+          menu=false;
+          
+        }
+      }
+    
+      function menuBarra() {
+    
+        if(menu==false) {
+          //si menu oculto lo mostramos
+          document.querySelector("nav").style.left="0px"
+          menu=true;
+    
+        }else{
+          //si menu visible lo ocultamos
+          document.querySelector("nav").style.left="-130px"
+          menu=false;
+        }
+}
+ }
 
 window.addEventListener('DOMContentLoaded', initPage_onDomContentLoaded);
 

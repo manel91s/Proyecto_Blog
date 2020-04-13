@@ -1,14 +1,15 @@
 <header>
-     
-     <h1>Blog</h1>
+
      <nav>
-        <ul>
-            <li><a href="{{ action('PostController@index') }}">Inicio</a></li>
-            <li><a href="">Acerca de </a></li>
-            <li><a href="">Contacto</a></li>
-        </ul>
+                 
+            <h1 id="logo">Blog</h1>
+        
+            <a href="{{ action('PostController@index') }}">Inicio</a>
+            <a href="">Acerca de </a>
+            <a href="">Contacto</a>
+        
          
      </nav>
-
+     <img id="hamburguesa" src="images/rayitas.svg">
      
  </header>

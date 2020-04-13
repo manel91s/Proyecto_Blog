@@ -40,7 +40,7 @@ function showAllquery(posts) {
 
     console.log(posts);
 
-    var table = `<tr><th>Titulo</th><th>Genero</th><th>Autor</th></tr>`;
+    var table = `<tr><th>Titulo</th><th>Genero</th><th>Autor</th><th>Editar</th><th>Eliminar</th></tr>`;
 
      for(i in posts) {
         table+= `<tr>
@@ -48,8 +48,9 @@ function showAllquery(posts) {
                     <td>${posts[i].title}</td>
                     <td>${posts[i].name_category}</td>
                     <td>${posts[i].name_user}</td>
-                    <td><a href="editPost/${posts[i].id}">Editar</a></td>
+                    <td><a href="detaileditPost/${posts[i].id}"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                     <td><img id="delete" name="${posts[i].id}" src="./images/delete.png" alt=""></td>
+                    
                  </tr>`
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 Use Carbon\Carbon;
 use DB;
+use Session;
 
 
 use Illuminate\Http\Request;
@@ -42,8 +43,6 @@ class PostController extends Controller
            }
 
            
-
-       
            
            return view('posts.managament', ['pageName' => 'page-post',
                                            'dataPage' => 'page-post-managament']);
@@ -150,13 +149,92 @@ class PostController extends Controller
 
      }
 
-     public function edit($id) {
+     public function detailedit($id) {
+
+        if(!session()->has('admin')) {   
+            return redirect()->action('PostController@index');
+           }
+
         
+        $detailsPost = DB::table('post')
+        ->join('user', 'post.id_user', '=', 'user.id')
+        ->join('category', 'post.id_category', '=', 'category.id')
+        ->select('user.name as name_user', 'post.*', 'category.name as name_category')
+        ->where('post.id', '=', $id)->get();
+
         
 
-        return view('posts.edit',['pageName' => 'page-post',
+
+
+        return view('posts.edit',['detailsPost' => $detailsPost,
+                                  'pageName' => 'page-post',
                                   'dataPage' => 'page-post']);
                                                 
+
+     }
+
+     public function update(Request $request) {
+
+     
+
+        $id = $request->input('id_user');
+        $id_post = $request->input('id_post');
+        $current_image = $request->input('current_image');
+        $current_cover = $request->input('current_cover');
+
+        $validate = $this->validate($request, [
+            'id_user' => 'required|integer',
+            'id_category' => 'required|integer',
+            'title' => 'required|string|max:120',
+            'featured' => 'required|integer',
+            'body' => 'required|string|',
+          ]);
+
+          
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $name = time().$file->getClientOriginalName();
+            
+            //Comprobar el tipo de la imagen para guardar en el storage
+            if($file->getMimeType() == 'image/jpeg' || $file->getMimeType() == 'image/jpg' || $file->getMimeType() == 'image/png') 
+            {
+                $file->move(public_path().'/images/', $name);
+            }
+        }else {
+            $name = $current_image;
+        }
+
+        if($request->hasFile('cover')) {
+            $fileCover = $request->file('cover');
+            $nameCover = time().$fileCover->getClientOriginalName();
+            
+            //Comprobar el tipo de la imagen para guardar en el storage
+            if($fileCover->getMimeType() == 'image/jpeg' || $fileCover->getMimeType() == 'image/jpg' || $fileCover->getMimeType() == 'image/png') 
+            {
+                $fileCover->move(public_path().'/imagesCover/', $nameCover);
+            }
+        }else {
+            $nameCover = $current_cover;
+        }
+
+        $currentTime =Carbon::now();
+        $update = DB::table('post')
+            ->where('id', $id_post )
+            ->update(['updated_at' => $currentTime,
+                      'id_user' => $id,
+                      'id_category' => $request->input('id_category'),
+                      'image' => $name,
+                      'cover' => $nameCover,
+                      'title' => $request->input('title'),
+                      'featured' => $request->input('featured'),
+                      'body' => $request->input('body')
+                      ]);
+
+      
+  
+         Session::flash('success', 'Usuario Actualizado Correctamente');
+
+         return redirect()->action('PostController@managament')->with('success', 'Post actualizado!');
 
      }
 

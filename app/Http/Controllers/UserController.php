@@ -16,6 +16,7 @@ class UserController extends Controller
       $login = session('login');
       $user = null;
 
+      //comprobación de acceso del usuario a actualizar su perfil
       if(!empty($id) && $login && $id==$login->id) {
 
           $user = DB::table('user')
@@ -130,10 +131,10 @@ class UserController extends Controller
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
             'avatar_url' => $name,
-            'id_role' => 1
+            'id_role' => 2
         ));
 
-        Session::flash('success_message', 'Usuario Registrado Correctamente');
+        Session::flash('success', 'Usuario Registrado Correctamente');
 
         return back();
     

@@ -7,7 +7,6 @@ class Utils {
     public static function showCategorias() {
         
         $allCategory = DB::table('category')->get();
-
         return $allCategory;
 
     }

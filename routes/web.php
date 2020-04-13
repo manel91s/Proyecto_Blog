@@ -16,7 +16,8 @@
 Route::get('/', 'PostController@index');
 Route::get('CreatePost', 'PostController@create');
 Route::get('managamentPost', 'PostController@managament');
-Route::get('editPost/{id}', 'PostController@edit');
+Route::get('detaileditPost/{id}', 'PostController@detailedit');
+Route::post('updatePost', 'PostController@update');
 Route::post('queryPost', 'Postcontroller@queryPost');
 Route::post('deletePosts', 'Postcontroller@deletePost');
 Route::post('savePost','PostController@save');

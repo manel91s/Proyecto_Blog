@@ -6,6 +6,10 @@
 
 <h2>Gestionar Entradas</h2>
 
+@if (Session::has('success'))
+    <p class="alert-success center-text">{{Session::get('success')}}</p>
+@endif
+
 <table id="allPost">
 
 

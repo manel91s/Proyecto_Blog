@@ -17,8 +17,7 @@
 }
 
 .container {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 130px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -53,6 +52,10 @@ body {
   margin-bottom: 10px;
 }
 
+.delete {
+  cursor: pointer;
+}
+
 .photoAdmin {
   border: 5px solid #d6d60f !important;
 }
@@ -63,6 +66,11 @@ body {
 
 .text-bold {
   font-weight: 600;
+}
+
+.center-text {
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .pagination {
@@ -198,10 +206,9 @@ aside div .content {
 header {
   background: #292929;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  height: 65px;
+  position: relative;
+  position: fixed;
 }
 
 header span {
@@ -213,6 +220,8 @@ header h1 {
   display: block;
   cursor: pointer;
   transition: 300ms;
+  line-height: 65px;
+  background: #292929;
 }
 
 header h1:after {
@@ -225,13 +234,14 @@ header h1:hover:after {
   color: white;
 }
 
-header h1:hover {
-  transform: scale(1.2, 1.2);
-  color: #58c93a;
+header nav a:hover {
+  background: gray;
 }
 
 header nav {
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  transition: 1s;
 }
 
 header nav ul {
@@ -239,54 +249,39 @@ header nav ul {
   padding: 0;
 }
 
-header nav li {
-  display: inline-block;
-}
-
 header nav a {
-  display: block;
-  height: 120px;
-  padding: 50px;
+  padding: 0 15px;
   border-left: 1px solid #1d1d1d;
   transition: 0.8s;
   cursor: pointer;
+  line-height: 65px;
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
   color: white;
+  background: #292929;
 }
 
 header nav a:hover {
   color: #58c93a;
 }
 
-header nav a:last-child {
+header nav a {
+  border-left: 1px solid #1d1d1d;
   border-right: 1px solid #1d1d1d;
 }
 
 header nav li {
-  display: inline-block;
-  position: relative;
   color: white;
   text-decoration: none;
+  display: inline-block;
 }
 
-header nav li:after {
-  content: "";
-  display: block;
-  margin: auto;
-  height: 5px;
-  width: 0px;
-  transition: all 0.8s;
-}
-
-header nav li:hover:after {
-  width: 100%;
-  background: #58c93a;
-}
-
-header nav li:hover {
-  color: #58c93a;
+#hamburguesa {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: none;
 }
 
 footer {
@@ -349,6 +344,46 @@ footer .fa-instagram {
 
 footer div {
   text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  section {
+    width: 100%;
+    display: block;
+  }
+  aside {
+    width: 100%;
+    flex-direction: column;
+    margin: 0px;
+  }
+  aside div {
+    width: 90%;
+    margin: auto;
+  }
+  #hamburguesa {
+    display: block;
+    cursor: pointer;
+  }
+  h1 {
+    text-align: center;
+  }
+  nav a {
+    text-align: center;
+  }
+  nav {
+    position: absolute;
+    top: 65px;
+    flex-direction: column;
+    left: -130px;
+  }
+  li {
+    display: block;
+  }
 }
 
 .padding-80px-top {

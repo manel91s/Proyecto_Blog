@@ -1,6 +1,5 @@
-
-@php use App\Custom\Utils; @endphp
-@php use Illuminate\Pagination\Paginator @endphp;
+@php use App\Custom\Utils @endphp
+@php use Illuminate\Pagination\Paginator @endphp
 @extends('layout-front.layout_front')
 
 @section('section')
