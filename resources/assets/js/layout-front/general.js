@@ -2,6 +2,63 @@
 function initPage_onDomContentLoaded() {
     var page = document.querySelector("[data-page]").getAttribute('data-page');
     route(page)
+
+    document.querySelector("#form-searchxs").addEventListener('submit',eventFormxs);
+   
+    
+}
+
+function eventFormxs(event) {
+    event.preventDefault();
+    var btnsearchxs = document.querySelector("#searchxs").value;
+    if(btnsearchxs.trim()=="") {
+        var element = document.createElement("span");
+        var content = document.createTextNode('El campo no puede estar vacio');
+        element.appendChild(content);
+        var div = document.querySelector("#div2");
+        div.appendChild(element);
+        return;
+    }
+    let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    
+    fetch("/search", {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text-plain, */*",
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRF-TOKEN": token
+         },
+        method: 'POST',
+        credentials: "same-origin",
+        body: JSON.stringify({
+          name: btnsearchxs
+         
+        })
+       })
+        .then(function(response) {
+            if(response.ok) {
+                return response.json()
+            } else {
+                throw "Error en la llamada Ajax";
+            }
+        
+        })
+        .then(function(response) {
+                document.querySelector("#div2").innerHTML="";
+                console.log(response.search);
+                if(response.search.length!=0) {
+                  
+                    showQuerySearch(response.search);
+                }else{
+                    failedQuerySearch();
+                }
+
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+    
+    
 }
 
  window.onload=function() {
@@ -48,6 +105,7 @@ function route(page) {
             break
 
         case 'page-post':
+
             search();
              break;
         case 'page-post-managament':
@@ -61,13 +119,16 @@ function route(page) {
 }
 
 
-function search() {
+function search(xsearch) {
     
     document.querySelector("#form-search").addEventListener('submit', function(e) {
             e.preventDefault();
-        var search = document.querySelector("#search").value;
 
-        if(search.trim()=="") {
+            var btnsearch = document.querySelector("#search").value;
+            
+            
+            
+        if(btnsearch.trim()=="") {
             var element = document.createElement("span");
             var content = document.createTextNode('El campo no puede estar vacio');
             element.appendChild(content);
@@ -88,7 +149,7 @@ function search() {
             method: 'POST',
             credentials: "same-origin",
             body: JSON.stringify({
-              name: search
+              name: btnsearch
              
             })
            })

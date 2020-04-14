@@ -43,8 +43,8 @@
     </p>
     
 
-    @if (Session::has('success_message'))
-        <p class="alert-success">{{Session::get('success_message')}}</p>
+    @if (Session::has('success'))
+        <p class="alert-success">{{Session::get('success')}}</p>
     @endif
 
     <input type="submit" value="Enviar">

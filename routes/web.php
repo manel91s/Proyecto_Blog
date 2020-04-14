@@ -18,7 +18,7 @@ Route::get('CreatePost', 'PostController@create');
 Route::get('managamentPost', 'PostController@managament');
 Route::get('detaileditPost/{id}', 'PostController@detailedit');
 Route::post('updatePost', 'PostController@update');
-Route::post('queryPost', 'Postcontroller@queryPost');
+
 Route::post('deletePosts', 'Postcontroller@deletePost');
 Route::post('savePost','PostController@save');
 Route::get('detailPost/{id}', 'PostController@detail')->name('detail.post');
@@ -41,7 +41,11 @@ Route::post('createComment', 'CommentController@create');
 
 //Search
 Route::post('search', 'SearchController@index');
+Route::post('searchqueryposts', 'SearchPostscontroller@index');
 
+
+//acerca de
+Route::get('about', 'AboutController@index');
 
 
 

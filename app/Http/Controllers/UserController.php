@@ -131,7 +131,7 @@ class UserController extends Controller
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
             'avatar_url' => $name,
-            'id_role' => 2
+            'id_role' => 1
         ));
 
         Session::flash('success', 'Usuario Registrado Correctamente');

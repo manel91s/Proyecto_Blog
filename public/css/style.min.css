@@ -23,6 +23,10 @@
   justify-content: center;
 }
 
+.container-movie {
+  padding-bottom: 80px;
+}
+
 body {
   font-family: "Calibrepro";
   font-weight: 400;
@@ -144,6 +148,10 @@ a {
 
 section {
   width: 48%;
+}
+
+.d-lg-block {
+  display: none;
 }
 
 aside {
@@ -347,6 +355,32 @@ footer div {
 }
 
 @media only screen and (max-width: 800px) {
+  .page-post section p {
+    text-align: center;
+  }
+  .margin-50px-xs-top {
+    margin-top: 50px;
+  }
+  .d-lg-block {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+  .d-lg-block h2 {
+    text-transform: uppercase;
+    background: #f8f8f8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    border-left: 4px solid #58c93a;
+    font-size: 18px;
+    font-weight: 600;
+    color: #adacac;
+    margin-bottom: 16px;
+  }
+  .d-xs-none {
+    display: none;
+  }
   .container {
     flex-direction: column;
     padding-right: 10px;
@@ -406,6 +440,10 @@ footer div {
   margin-right: 10px;
 }
 
+.margin-10px-bottom {
+  margin-bottom: 10px;
+}
+
 .padding-80px-bottom {
   padding-bottom: 80px;
 }
@@ -420,6 +458,27 @@ footer div {
 
 .padding-20px-bottom {
   padding-bottom: 20px;
+}
+
+.page-about #container-about {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.page-about #container-about img {
+  width: 300px;
+  height: 300px;
+}
+
+.page-about h1 {
+  text-align: center;
+}
+
+.page-about .h3 {
+  margin-top: 10px;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
 }
 
 @font-face {

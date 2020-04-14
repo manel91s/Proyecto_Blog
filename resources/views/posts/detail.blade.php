@@ -57,7 +57,7 @@
 
         @for ($i=0; $i< sizeof($detailPost); $i++)
         @if (session()->has('login'))
-        <form action="{{ action('CommentController@create') }}" method="POST" class="form-comment">
+        <form action="{{ action('CommentController@create') }}" method="POST" class="form-comment padding-80px-bottom">
         {{ csrf_field() }}
        
         <h2>Pon tu comentario</h2>

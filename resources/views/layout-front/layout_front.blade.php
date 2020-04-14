@@ -21,6 +21,8 @@
     <!--CONTAINER SECTION & ASIDE -->
     <div class="container">
 
+    @include('layout-front.display_search')
+    
         <section>
             @yield('section')
         </section>

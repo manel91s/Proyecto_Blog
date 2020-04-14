@@ -2,15 +2,30 @@
 <aside>
     <div>
 
-        <div class="padding-80px-bottom">
+        <div class="padding-80px-bottom d-xs-none">
             <h2>Buscar.</h2>
-            <form action="" method="GET" id="form-search">
-            <input type="text" id="search" name="search" placeholder="Buscar pelicula"> 
-            <input type="submit" value="Enviar">
-            <div id="div1"></div>
+            <form action="" method="" id="form-search">
+                <input class="margin-10px-bottom" type="text" id="search" name="search" placeholder="Buscar pelicula">
+                <input type="submit" value="Enviar">
+                <div id="div1"></div>
             </form>
         </div>
-        <div class="padding-40px-bottom">
+
+        <div class="padding-80px-bottom margin-50px-xs-top">
+
+            <h2>Categorias.</h2>
+            @php $categorys = Utils::showCategorias() @endphp
+            <ul>
+                @foreach ($categorys as $category)
+                <li>
+                    <a href="{{ route('detail.category',$category->id)}}">{{$category->name}}</a>
+                </li>
+                @endforeach
+            </ul>
+
+        </div>
+
+        <div class="padding-80px-bottom">
             @if(!session()->has('login'))
             <h2>Login.</h2>
             <form action="{{ action('UserController@login') }}" method="post">
@@ -43,21 +58,21 @@
 
         @endif
 
-     
+
 
         @php $user = session('login') @endphp
 
         @if($user && $user->id_role==1)
-            @php $roleClass = "photoAdmin"; @endphp
-            @else
-            @php $roleClass=""; @endphp
-            @endif
+        @php $roleClass = "photoAdmin"; @endphp
+        @else
+        @php $roleClass=""; @endphp
+        @endif
 
         @if(session()->has('admin') && session()->has('login'))
 
 
         <div class="padding-40px-bottom">
-           
+
             <h2>Panel de Usuario.</h2>
 
             @php $realImage = Utils::showImage($user->id) @endphp
@@ -71,18 +86,18 @@
             @endif
 
             <div class="info-user">
-            <i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span class="text-bold">
-                        <?=$user->name ." ". $user->surname?></span>
+                <i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span class="text-bold">
+                    <?=$user->name ." ". $user->surname?></span>
 
-            <ul>
-                <li><a href="{{ route('update.user',$user->id)}}">Gestionar Perfil</a></li>
-                <li><a class="" href="{{ action('CategoryController@index') }}">Crear categorias</a></li>
-                <li><a class="" href="{{ action('PostController@create') }}">Crear entrada</a></li>
-                <li><a href="{{ action('PostController@managament') }}">Gestionar Entradas</a></li>
-                <li><a class="" href="{{ action('UserController@logout') }}">Cerrar Session</a></li>
-            </ul>
+                <ul>
+                    <li><a href="{{ route('update.user',$user->id)}}">Gestionar Perfil</a></li>
+                    <li><a class="" href="{{ action('CategoryController@index') }}">Crear categorias</a></li>
+                    <li><a class="" href="{{ action('PostController@create') }}">Crear entrada</a></li>
+                    <li><a href="{{ action('PostController@managament') }}">Gestionar Entradas</a></li>
+                    <li><a class="" href="{{ action('UserController@logout') }}">Cerrar Session</a></li>
+                </ul>
             </div>
-         
+
         </div>
 
         @elseif(session()->has('login'))
@@ -91,7 +106,7 @@
 
         <div>
             <h2>Panel de Usuario.</h2>
-            
+
             @if($realImage && $user->avatar_url!=$realImage->avatar_url)
             <img class="avatar_image {{$roleClass}}" src="{{asset('avatar_img/'.$realImage->avatar_url)}}" alt="">
             @elseif($user->avatar_url!=null)
@@ -100,11 +115,11 @@
             <img class="" src="" alt="">
             @endif
 
-            <div class="info-user"> 
+            <div class="info-user">
                 <i class="fa fa-user padding-20px-bottom" aria-hidden="true"></i><span class="text-bold">
-                        <?=$user->name ." ". $user->surname?></span>
+                    <?=$user->name ." ". $user->surname?></span>
                 <ul>
-                    
+
                     <li><a href="{{ route('update.user',$user->id)}}">Gestionar Perfil</a></li>
                     <li><a href="{{ action('UserController@logout') }}">Cerrar Sesion</a></li>
 
@@ -117,17 +132,6 @@
 
         <div>
 
-            <h2>Categorias.</h2>
-            @php $categorys = Utils::showCategorias() @endphp
-            <ul>
-                @foreach ($categorys as $category)
-                <li>
-                    <a href="{{ route('detail.category',$category->id)}}">{{$category->name}}</a>
-                </li>
-            @endforeach
-            </ul>
-
-        </div>
 
 
 

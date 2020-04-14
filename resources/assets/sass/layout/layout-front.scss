@@ -18,6 +18,10 @@
     justify-content: center;
 }
 
+.container-movie {
+    padding-bottom:80px;
+}
+
 body {
 
     font-family: "Calibrepro";
@@ -157,6 +161,10 @@ a{
 section {
     width: 48%;
     
+}
+
+.d-lg-block {
+    display:none;
 }
 
 //END SECTION
@@ -388,6 +396,41 @@ footer {
 
 //END FOOTER
 @media only screen and (max-width:800px) {
+
+
+   .page-post section p {
+       
+       text-align:center;
+   }
+
+   .margin-50px-xs-top {
+       margin-top:50px;
+   }
+
+    .d-lg-block {
+        display:block;
+        width:90%;
+        margin:auto;
+        
+        
+        h2 {
+            text-transform: uppercase;
+            background: $graylight;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 25px;
+            border-left: 4px solid $green;
+            font-size: 18px;
+            font-weight: 600;
+            color: $graytext;
+            margin-bottom:16px;
+        }
+    
+    }
+
+    .d-xs-none {
+        display:none;
+    }
 
    .container {
        flex-direction: column;

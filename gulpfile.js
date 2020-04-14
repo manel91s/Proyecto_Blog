@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var elixir = require('laravel-elixir');
 
+
 elixir(function(mix) {
     mix.scripts([
         'layout-front/general.js',
@@ -14,6 +15,7 @@ elixir(function(mix) {
     mix.sass([
         'layout/layout-front.scss',
         'layout/custom.scss',
+        'about/about.scss',
         'user/register.scss',
         'post/style.scss',
         'category/style.scss',

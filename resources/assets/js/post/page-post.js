@@ -1,7 +1,7 @@
 function managamentPost() {
 
     let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    fetch("/queryPost", {
+    fetch("/searchqueryposts", {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json, text-plain, */*",

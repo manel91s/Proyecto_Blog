@@ -6,6 +6,7 @@
 @section('section')
 
 
+
 @for ($i=0; $i< sizeof($featuredPosts); $i++)
     <article class="padding-80px-bottom">
         
